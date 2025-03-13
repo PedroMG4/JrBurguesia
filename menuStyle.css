@@ -1,0 +1,354 @@
+/* Reset global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden; /* Elimina desbordes horizontales */
+}
+
+body {
+    font-family: 'Kanit', sans-serif;
+    background-image: url(Assets/fondo.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Barra de navegación */
+#navlist {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: rgb(93, 4, 2);
+    color: white;
+    height: 100px;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: inherit;
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none; /* Quita el subrayado del enlace */
+    color: inherit; /* Mantiene el color del texto original */
+}
+
+.logo-link:hover {
+    opacity: 0.8; /* Efecto de hover opcional */
+}
+
+
+#imgLogo{
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+}
+
+/* Sección de categorías */
+#barraCategorias {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 35px;
+    font-size: 35px;
+    font-style: italic;
+    font-weight: 600;
+}
+
+.left-section{
+    display: block;
+    align-items: center;
+    gap: 10px;
+    margin-left: 100px;
+}
+
+.contacto{
+    color: #f2bb13;
+}
+
+.logoArriba{
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #f2bb13;
+}
+
+.right-section{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-right: 100px;
+}
+
+#carrito{
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+}
+
+#catHamburguesas {
+    gap: 20px;
+    cursor: pointer;
+    padding: 20px;
+    transition: all 0.5s ease;
+    border-radius: 20px;
+    text-decoration: none;
+    color: inherit;
+}
+
+#catHamburguesas:hover {
+    text-decoration: underline;
+    transform: scale(1.10);
+    opacity: 0.9;
+    background-color: #730202cd;
+    color: white;
+}
+
+
+#catLomitos{
+    gap: 20px;
+    cursor: pointer;
+    padding: 20px;
+    transition: all .5s ease;
+    border-radius: 20px;
+    text-decoration: none;
+    color: inherit;
+}
+#catLomitos:hover{
+    text-decoration: underline;
+    scale: 1.10;
+    opacity: 90%;
+    background-color: #730202cd;
+    color: white;
+}
+
+#catMilanesas{
+    gap: 20px;
+    cursor: pointer;
+    padding: 20px;
+    transition: all .5s ease;
+    border-radius: 20px;
+    text-decoration: none;
+    color: inherit;
+}
+#catMilanesas:hover{
+    text-decoration: underline;
+    scale: 1.10;
+    opacity: 90%;
+    background-color: #730202cd;
+    color: white;
+}
+
+#catPapas{
+    gap: 20px;
+    cursor: pointer;
+    padding: 20px;
+    transition: all .5s ease;
+    border-radius: 20px;
+    text-decoration: none;
+    color: inherit;
+}
+#catPapas:hover{
+    text-decoration: underline;
+    scale: 1.10;
+    opacity: 90%;
+    background-color: #730202cd;
+    color: white;
+}
+
+#catCombos{
+    gap: 20px;
+    cursor: pointer;
+    padding: 20px;
+    transition: all .5s ease;
+    border-radius: 20px;
+    text-decoration: none;
+    color: inherit;
+}
+#catCombos:hover{
+    text-decoration: underline;
+    scale: 1.10;
+    opacity: 90%;
+    background-color: #730202cd;
+    color: white;
+}
+
+/* estilo para parte de hamburguesas*/
+.imagenesHamburguesas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Exactamente 3 columnas */
+    gap: 200px; /* Espacio entre imágenes */
+    padding: 20px 200px; /* Espacio de 200px a la izquierda y derecha */
+    margin-top: 20px; /* Separación superior */
+}
+
+.imagenesHamburguesas img {
+    width: 100%; /* Que cada imagen ocupe el 100% de su columna */
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+.imagenesHamburguesas img:hover {
+    transform: scale(1.05);
+}
+
+.containerHamburguesas{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 100px 1fr 100px;
+    gap: 10px 10px;
+    text-align: center;
+    font-size: 75px;
+    font-style: italic;
+    font-weight: 700;
+}
+.categoriaHamburguesas{
+    height: 25px;
+    width: 100%;
+}
+
+/* estilo para parte de lomitos*/
+.imagenesLomitos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Exactamente 3 columnas */
+    gap: 200px; /* Espacio entre imágenes */
+    padding: 20px 200px; /* Espacio de 200px a la izquierda y derecha */
+    margin-top: 20px; /* Separación superior */
+}
+
+.imagenesLomitos img {
+    width: 100%; /* Que cada imagen ocupe el 100% de su columna */
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+.imagenesLomitos img:hover {
+    transform: scale(1.05);
+}
+.containerLomitos{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 100px 1fr 100px;
+    gap: 10px 10px;
+    text-align: center;
+    font-size: 75px;
+    font-style: italic;
+    font-weight: 700;
+}
+.categoriaLomitos{
+    height: 25px;
+    width: 100%;
+}
+
+/* estilo para parte de milanesas*/
+.imagenesMilanesas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Exactamente 3 columnas */
+    gap: 200px; /* Espacio entre imágenes */
+    padding: 20px 200px; /* Espacio de 200px a la izquierda y derecha */
+    margin-top: 20px; /* Separación superior */
+}
+
+.imagenesMilanesas img {
+    width: 100%; /* Que cada imagen ocupe el 100% de su columna */
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+.imagenesMilanesas img:hover {
+    transform: scale(1.05);
+}
+.containerMilanesas{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 100px 1fr 100px;
+    gap: 10px 10px;
+    text-align: center;
+    font-size: 75px;
+    font-style: italic;
+    font-weight: 700;
+}
+.categoriaMilanesas{
+    height: 25px;
+    width: 100%;
+}
+
+/* estilo para parte de papas*/
+.imagenesPapas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Exactamente 3 columnas */
+    gap: 200px; /* Espacio entre imágenes */
+    padding: 20px 200px; /* Espacio de 200px a la izquierda y derecha */
+    margin-top: 20px; /* Separación superior */
+}
+
+.imagenesPapas img {
+    width: 100%; /* Que cada imagen ocupe el 100% de su columna */
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+.imagenesPapas img:hover {
+    transform: scale(1.05);
+}
+.containerPapas{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 100px 1fr 100px;
+    gap: 10px 10px;
+    text-align: center;
+    font-size: 75px;
+    font-style: italic;
+    font-weight: 700;
+}
+.categoriaPapas{
+    height: 25px;
+    width: 100%;
+}
+
+/* estilo para parte de combos*/
+.imagenesCombos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Exactamente 3 columnas */
+    gap: 200px; /* Espacio entre imágenes */
+    padding: 20px 200px; /* Espacio de 200px a la izquierda y derecha */
+    margin-top: 20px; /* Separación superior */
+}
+
+.imagenesCombos img {
+    width: 100%; /* Que cada imagen ocupe el 100% de su columna */
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+.imagenesCombos img:hover {
+    transform: scale(1.05);
+}
+.containerCombos{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 100px 1fr 100px;
+    gap: 10px 10px;
+    text-align: center;
+    font-size: 75px;
+    font-style: italic;
+    font-weight: 700;
+}
+.categoriaCombos{
+    height: 25px;
+    width: 100%;
+}
