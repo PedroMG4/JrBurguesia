@@ -30,22 +30,21 @@ body {
     color: white;
     height: 100px;
     padding: 10px 20px;
-    text-decoration: none;
-    color: inherit;
+    height: 120px;
 }
 
 .logo-link {
     display: flex;
     align-items: center;
     gap: 10px;
-    text-decoration: none; /* Quita el subrayado del enlace */
-    color: inherit; /* Mantiene el color del texto original */
+    text-decoration: none;
+    transition: all 0.5s ease;
 }
 
-.logo-link:hover {
-    opacity: 0.8; /* Efecto de hover opcional */
+.logo-link:hover{
+    scale: 1.10;
+    color: #730202;
 }
-
 
 #imgLogo{
     width: 100px;
@@ -73,6 +72,14 @@ body {
 
 .contacto{
     color: #f2bb13;
+    cursor: pointer;
+    font-size: 35px;
+    transition: all 0.5s ease;
+}
+
+.contacto:hover{
+    scale: 1.10;
+    color: #ff9900;
 }
 
 .logoArriba{
@@ -93,6 +100,11 @@ body {
     width: 35px;
     height: 35px;
     cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+#carrito:hover{
+    scale: 1.10;
 }
 
 #catHamburguesas {
@@ -351,4 +363,90 @@ body {
 .categoriaCombos{
     height: 25px;
     width: 100%;
+}
+/* Modal fondo oscuro */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 20;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+    backdrop-filter: blur(3px);
+    animation: fadeIn 0.5s ease forwards;
+}
+
+/* Contenido del Modal */
+.modal-content {
+    background-color: #f2bb13;
+    color: #730202;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 12px;
+    width: 50%;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+    transform: translateY(-50px);
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+
+/* Mostrar el contenido del Modal */
+.modal.show .modal-content {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Botón de Cerrar */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close:hover {
+    color: #000;
+}
+
+/* Animación de fondo */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.modal-title-estilo {
+    color: #730202;
+    font-size: 45px;
+    font-weight: bold;
+    margin-top: 35px;
+}
+
+.modal-description-estilo {
+    color: #bf0404;
+    font-size: 18px;
+    line-height: 1.5;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.hamburguesa-item button {
+    margin-top: 30px;
+    padding: 8px 12px;
+    background-color: #ffcc00;
+    border: 10px solid #730202;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    color: #730202;
+    font-size: 20px;
+    font-style: italic;
+    font-family: 'Kanit', sans-serif;
+    font-weight: 500;
+}
+
+.hamburguesa-item button:hover {
+    background-color: #ff9900;
 }
