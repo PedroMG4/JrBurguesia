@@ -3,16 +3,14 @@ function openModal(element) {
     const modalTitle = document.getElementById("modalTitle");
     const modalDescription = document.getElementById("modalDescription");
 
-    // Obtener datos desde atributos personalizados
     const title = element.getAttribute("data-title");
     const description = element.getAttribute("data-description");
 
-    // Insertar datos en el modal
     modalTitle.textContent = title;
     modalDescription.textContent = description;
     
 
-    // Mostrar el modal con la animación
+    //mostrar modal
     modal.style.display = "block";
     setTimeout(() => {
         modal.classList.add("show");
@@ -24,7 +22,7 @@ modalDescription.classList.add("modal-description-estilo");
 function closeModal(event) {
     const modal = document.getElementById("infoModal");
 
-    // Cerrar el modal si se hace clic fuera del contenido o en la X
+    //para cerrar modal
     if (event.target.classList.contains("modal") || event.target.classList.contains("close")) {
         modal.classList.remove("show");
         setTimeout(() => {
