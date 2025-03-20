@@ -1,4 +1,3 @@
-/* Reset global */
 * {
     margin: 0;
     padding: 0;
@@ -9,24 +8,24 @@
 html, body {
     width: 100%;
     height: 100%;
-    overflow-x: hidden; /* Elimina desbordes horizontales */
+    overflow-x: hidden;
 }
 
 body {
     font-family: 'Kanit', sans-serif;
-    background-image: url(Assets/fondo.png);
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)), url(Assets/fondo.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 
-/* Barra de navegación */
+/* barra de navegacion */
 #navlist {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    background-color: rgb(93, 4, 2);
+    background-color: rgb(53, 4, 2);
     color: white;
     height: 100px;
     padding: 10px 20px;
@@ -52,15 +51,17 @@ body {
     cursor: pointer;
 }
 
-/* Sección de categorías */
+/* categorías */
 #barraCategorias {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    margin-top: 35px;
     font-size: 35px;
     font-style: italic;
     font-weight: 600;
+    background-color: rgb(53, 4, 2);
+    color: #f2bb13;
+    padding: 20px;
 }
 
 .left-section{
@@ -197,16 +198,16 @@ body {
 /* estilo para parte de hamburguesas*/
 .imagenesHamburguesas {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Exactamente 3 columnas */
-    gap: 200px; /* Espacio entre imágenes */
-    padding: 20px 200px; /* Espacio de 200px a la izquierda y derecha */
-    margin-top: 20px; /* Separación superior */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 200px;
+    padding: 20px 200px; 
+    margin-top: 20px;
 }
 
 .imagenesHamburguesas img {
-    width: 100%; /* Que cada imagen ocupe el 100% de su columna */
+    width: 100%;
     height: auto;
-    border-radius: 8px;
+    border-radius: 50px;
     transition: transform 0.3s ease;
     cursor: pointer;
 }
@@ -224,22 +225,23 @@ body {
     font-style: italic;
     font-weight: 700;
 }
-.categoriaHamburguesas{
+#categoriaHamburguesas{
     height: 25px;
     width: 100%;
+    color: white;
 }
 
 /* estilo para parte de lomitos*/
 .imagenesLomitos {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Exactamente 3 columnas */
-    gap: 200px; /* Espacio entre imágenes */
-    padding: 20px 200px; /* Espacio de 200px a la izquierda y derecha */
-    margin-top: 20px; /* Separación superior */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 200px;
+    padding: 20px 200px;
+    margin-top: 20px;
 }
 
 .imagenesLomitos img {
-    width: 100%; /* Que cada imagen ocupe el 100% de su columna */
+    width: 100%;
     height: auto;
     border-radius: 8px;
     transition: transform 0.3s ease;
@@ -258,22 +260,23 @@ body {
     font-style: italic;
     font-weight: 700;
 }
-.categoriaLomitos{
+#categoriaLomitos{
     height: 25px;
     width: 100%;
+    color: white;
 }
 
 /* estilo para parte de milanesas*/
 .imagenesMilanesas {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Exactamente 3 columnas */
-    gap: 200px; /* Espacio entre imágenes */
-    padding: 20px 200px; /* Espacio de 200px a la izquierda y derecha */
-    margin-top: 20px; /* Separación superior */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 200px;
+    padding: 20px 200px;
+    margin-top: 20px;
 }
 
 .imagenesMilanesas img {
-    width: 100%; /* Que cada imagen ocupe el 100% de su columna */
+    width: 100%;
     height: auto;
     border-radius: 8px;
     transition: transform 0.3s ease;
@@ -292,22 +295,23 @@ body {
     font-style: italic;
     font-weight: 700;
 }
-.categoriaMilanesas{
+#categoriaMilanesas{
     height: 25px;
     width: 100%;
+    color: white;
 }
 
 /* estilo para parte de papas*/
 .imagenesPapas {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Exactamente 3 columnas */
-    gap: 200px; /* Espacio entre imágenes */
-    padding: 20px 200px; /* Espacio de 200px a la izquierda y derecha */
-    margin-top: 20px; /* Separación superior */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 200px;
+    padding: 20px 200px;
+    margin-top: 20px;
 }
 
 .imagenesPapas img {
-    width: 100%; /* Que cada imagen ocupe el 100% de su columna */
+    width: 100%;
     height: auto;
     border-radius: 8px;
     transition: transform 0.3s ease;
@@ -326,22 +330,23 @@ body {
     font-style: italic;
     font-weight: 700;
 }
-.categoriaPapas{
+#categoriaPapas{
     height: 25px;
     width: 100%;
+    color: white;
 }
 
 /* estilo para parte de combos*/
 .imagenesCombos {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Exactamente 3 columnas */
-    gap: 200px; /* Espacio entre imágenes */
-    padding: 20px 200px; /* Espacio de 200px a la izquierda y derecha */
-    margin-top: 20px; /* Separación superior */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 200px;
+    padding: 20px 200px;
+    margin-top: 20px;
 }
 
 .imagenesCombos img {
-    width: 100%; /* Que cada imagen ocupe el 100% de su columna */
+    width: 100%;
     height: auto;
     border-radius: 8px;
     transition: transform 0.3s ease;
@@ -360,11 +365,12 @@ body {
     font-style: italic;
     font-weight: 700;
 }
-.categoriaCombos{
+#categoriaCombos{
     height: 25px;
     width: 100%;
+    color: white;
 }
-/* Modal fondo oscuro */
+/* fondo oscuro para modal */
 .modal {
     display: none;
     position: fixed;
@@ -392,13 +398,13 @@ body {
     transition: all 0.5s ease;
 }
 
-/* Mostrar el contenido del Modal */
+/* mostrar modal */
 .modal.show .modal-content {
     transform: translateY(0);
     opacity: 1;
 }
 
-/* Botón de Cerrar */
+/* cerrar modal */
 .close {
     color: #aaa;
     float: right;
@@ -411,7 +417,7 @@ body {
     color: #000;
 }
 
-/* Animación de fondo */
+/* animacion del fondo */
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
@@ -439,7 +445,7 @@ body {
     border: 10px solid #730202;
     border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: all 0.5s ease;
     color: #730202;
     font-size: 20px;
     font-style: italic;
@@ -449,4 +455,18 @@ body {
 
 .hamburguesa-item button:hover {
     background-color: #ff9900;
+    scale: 1.10;
+}
+
+#footer{
+    display: flex;
+    color: white;
+    font-size: 20px;
+    width: 100%;
+    background-color: rgb(90, 3, 2);
+    padding: 50px;
+    font-style: normal;
+    justify-content: center;
+    align-items: center;
+    font-weight: 100;
 }
