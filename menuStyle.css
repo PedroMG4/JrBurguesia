@@ -19,6 +19,10 @@ body {
     background-repeat: no-repeat;
 }
 
+header {
+    width: 100%;
+}
+
 /* barra de navegacion */
 #navlist {
     display: flex;
@@ -469,4 +473,148 @@ body {
     justify-content: center;
     align-items: center;
     font-weight: 100;
+}
+@media (max-width: 768px) {
+    /* -------- GENERAL -------- */
+    body {
+        font-size: 14px;
+        margin: 0;
+        padding: 0;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    button {
+        width: 90%;
+        padding: 12px;
+        font-size: 15px;
+        margin-top: 10px;
+        background-color: rgb(90, 3, 2);
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    /* -------- HEADER -------- */
+    #navlist {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 20px;
+        background-color: #333;
+        color: white;
+    }
+
+    .left-section {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex: 1;
+    }
+
+    .right-section {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        flex: 1;
+    }
+
+    .logo-link {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+    }
+
+    .logo-link h1 {
+        font-size: 20px;
+        color: white;
+    }
+
+    #carrito {
+        width: 30px;
+        height: 30px;
+    }
+
+    .contacto {
+        font-size: 14px;
+        color: white;
+    }
+
+    /* -------- BARRA DE CATEGORÍAS -------- */
+    #barraCategorias {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        padding: 15px 10px;
+        margin-top: 10px;
+        background-color: #f5f5f5;
+        border-radius: 6px;
+    }
+
+    #barraCategorias a {
+        width: 90%;
+        text-align: center;
+        padding: 10px;
+        font-size: 16px;
+        background-color: #eee;
+        border-radius: 6px;
+        text-decoration: none;
+        color: black;
+    }
+
+    /* -------- PRODUCTOS -------- */
+    .imagenesHamburguesas,
+    .imagenesLomitos,
+    .imagenesMilanesas,
+    .imagenesPapas,
+    .imagenesCombos {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .hamburguesa-item {
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .hamburguesa-item img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+    }
+
+    /* -------- MODAL -------- */
+    .modal-content {
+        width: 90%;
+        font-size: 14px;
+        padding: 20px;
+    }
+
+    /* -------- FOOTER -------- */
+    #footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 30px 10px;
+        gap: 10px;
+        background-color: rgb(90, 3, 2);
+        color: white;
+    }
+
+    #footer img {
+        margin-bottom: 10px;
+    }
 }
