@@ -1,576 +1,315 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*{
     scroll-behavior: smooth;
 }
 
-html, body {
+body {
+    margin: 0;
+    font-family: 'Kanit', sans-serif;
+    background: url("Assets/fondo.png") no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    position: relative;
+}
+
+/* Capa de oscurecimiento sobre el fondo */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    overflow-x: hidden;
+    background-color: rgba(64, 1, 1, 0.3); /* Bordó oscuro con opacidad */
+    z-index: -1;
 }
 
-body {
-    font-family: 'Kanit', sans-serif;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)), url(Assets/fondo.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
+/* === HEADER === */
 header {
-    width: 100%;
+    background-color: #730202;
+    padding: 10px 20px;
 }
 
-/* barra de navegacion */
 #navlist {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
-    background-color: rgb(53, 4, 2);
-    color: white;
-    height: 100px;
-    padding: 10px 20px;
-    height: 120px;
+    flex-wrap: wrap;
+}
+
+/* IZQUIERDA: Logo + Nombre */
+.left-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .logo-link {
     display: flex;
     align-items: center;
-    gap: 10px;
     text-decoration: none;
-    transition: all 0.5s ease;
-}
-
-.logo-link:hover{
-    scale: 1.10;
-    color: #730202;
-}
-
-#imgLogo{
-    width: 100px;
-    height: 100px;
-    cursor: pointer;
-}
-
-/* categorías */
-#barraCategorias {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    font-size: 35px;
-    font-style: italic;
-    font-weight: 600;
-    background-color: rgb(53, 4, 2);
-    color: #f2bb13;
-    padding: 20px;
-}
-
-.left-section{
-    display: block;
-    align-items: center;
-    gap: 10px;
-    margin-left: 100px;
-}
-
-.contacto{
-    color: #f2bb13;
-    cursor: pointer;
-    font-size: 35px;
-    transition: all 0.5s ease;
-}
-
-.contacto:hover{
-    scale: 1.10;
-    color: #ff9900;
-}
-
-.logoArriba{
-    font-size: 35px;
-    font-weight: bold;
-    cursor: pointer;
     color: #f2bb13;
 }
 
-.right-section{
+#imgLogo {
+    height: 80px;
+    width: 80px;
+}
+
+.logoArriba {
+    font-size: 50px;
+    font-weight: 700;
+    margin: 0;
+}
+
+/* DERECHA: Carrito + Contacto */
+.right-section {
     display: flex;
     align-items: center;
     gap: 15px;
-    margin-right: 100px;
 }
 
-#carrito{
-    width: 35px;
-    height: 35px;
+#carrito {
+    width: 50px;
+    height: 50px;
     cursor: pointer;
-    transition: all 0.5s ease;
 }
 
-#carrito:hover{
-    scale: 1.10;
+.contacto {
+    color: #f2bb13;
+    font-size: 50px;
+    margin: 0;
 }
 
-#catHamburguesas {
-    gap: 20px;
-    cursor: pointer;
-    padding: 20px;
-    transition: all 0.5s ease;
-    border-radius: 20px;
+/* === BARRA DE CATEGORÍAS === */
+#barraCategorias {
+    background-color: #400101;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 12px;
+    gap: 12px;
+    border-top: 3px solid #f29b30;
+    border-bottom: 3px solid #f29b30;
+}
+
+#barraCategorias a {
+    color: #400101;
+    background-color: #f2bb13;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: 600;
     text-decoration: none;
-    color: inherit;
+    transition: background 0.3s, transform 0.2s;
+    font-size: 35px;
 }
 
-#catHamburguesas:hover {
-    text-decoration: underline;
-    transform: scale(1.10);
-    opacity: 0.9;
-    background-color: #730202cd;
-    color: white;
-}
-
-
-#catLomitos{
-    gap: 20px;
-    cursor: pointer;
-    padding: 20px;
-    transition: all .5s ease;
-    border-radius: 20px;
-    text-decoration: none;
-    color: inherit;
-}
-#catLomitos:hover{
-    text-decoration: underline;
-    scale: 1.10;
-    opacity: 90%;
-    background-color: #730202cd;
-    color: white;
-}
-
-#catMilanesas{
-    gap: 20px;
-    cursor: pointer;
-    padding: 20px;
-    transition: all .5s ease;
-    border-radius: 20px;
-    text-decoration: none;
-    color: inherit;
-}
-#catMilanesas:hover{
-    text-decoration: underline;
-    scale: 1.10;
-    opacity: 90%;
-    background-color: #730202cd;
-    color: white;
-}
-
-#catPapas{
-    gap: 20px;
-    cursor: pointer;
-    padding: 20px;
-    transition: all .5s ease;
-    border-radius: 20px;
-    text-decoration: none;
-    color: inherit;
-}
-#catPapas:hover{
-    text-decoration: underline;
-    scale: 1.10;
-    opacity: 90%;
-    background-color: #730202cd;
-    color: white;
-}
-
-#catCombos{
-    gap: 20px;
-    cursor: pointer;
-    padding: 20px;
-    transition: all .5s ease;
-    border-radius: 20px;
-    text-decoration: none;
-    color: inherit;
-}
-#catCombos:hover{
-    text-decoration: underline;
-    scale: 1.10;
-    opacity: 90%;
-    background-color: #730202cd;
-    color: white;
-}
-
-/* estilo para parte de hamburguesas*/
-.imagenesHamburguesas {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 200px;
-    padding: 20px 200px; 
-    margin-top: 20px;
-}
-
-.imagenesHamburguesas img {
-    width: 100%;
-    height: auto;
-    border-radius: 50px;
-    transition: transform 0.3s ease;
-    cursor: pointer;
-}
-.imagenesHamburguesas img:hover {
+#barraCategorias a:hover {
+    background-color: #f29b30;
     transform: scale(1.05);
 }
 
-.containerHamburguesas{
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 100px 1fr 100px;
-    gap: 10px 10px;
-    text-align: center;
-    font-size: 75px;
-    font-style: italic;
+/* === CONTENEDORES DE CATEGORÍAS === */
+.containerHamburguesas,
+.containerLomitos,
+.containerMilanesas,
+.containerPapas,
+.containerCombos {
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* === TÍTULOS DE SECCIONES === */
+#categoriaHamburguesas,
+#categoriaLomitos,
+#categoriaMilanesas,
+#categoriaPapas,
+#categoriaCombos {
+    font-size: 45px;
     font-weight: 700;
-}
-#categoriaHamburguesas{
-    height: 25px;
-    width: 100%;
+    margin-bottom: 20px;
     color: white;
+    border-top: 8px solid #f29b30;
+    padding-left: 10px;
 }
 
-/* estilo para parte de lomitos*/
-.imagenesLomitos {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 200px;
-    padding: 20px 200px;
-    margin-top: 20px;
-}
-
-.imagenesLomitos img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    transition: transform 0.3s ease;
-    cursor: pointer;
-}
-.imagenesLomitos img:hover {
-    transform: scale(1.05);
-}
-.containerLomitos{
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 100px 1fr 100px;
-    gap: 10px 10px;
-    text-align: center;
-    font-size: 75px;
-    font-style: italic;
-    font-weight: 700;
-}
-#categoriaLomitos{
-    height: 25px;
-    width: 100%;
-    color: white;
-}
-
-/* estilo para parte de milanesas*/
-.imagenesMilanesas {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 200px;
-    padding: 20px 200px;
-    margin-top: 20px;
-}
-
-.imagenesMilanesas img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    transition: transform 0.3s ease;
-    cursor: pointer;
-}
-.imagenesMilanesas img:hover {
-    transform: scale(1.05);
-}
-.containerMilanesas{
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 100px 1fr 100px;
-    gap: 10px 10px;
-    text-align: center;
-    font-size: 75px;
-    font-style: italic;
-    font-weight: 700;
-}
-#categoriaMilanesas{
-    height: 25px;
-    width: 100%;
-    color: white;
-}
-
-/* estilo para parte de papas*/
-.imagenesPapas {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 200px;
-    padding: 20px 200px;
-    margin-top: 20px;
-}
-
-.imagenesPapas img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    transition: transform 0.3s ease;
-    cursor: pointer;
-}
-.imagenesPapas img:hover {
-    transform: scale(1.05);
-}
-.containerPapas{
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 100px 1fr 100px;
-    gap: 10px 10px;
-    text-align: center;
-    font-size: 75px;
-    font-style: italic;
-    font-weight: 700;
-}
-#categoriaPapas{
-    height: 25px;
-    width: 100%;
-    color: white;
-}
-
-/* estilo para parte de combos*/
+/* === GRID DE PRODUCTOS === */
+.imagenesHamburguesas,
+.imagenesLomitos,
+.imagenesMilanesas,
+.imagenesPapas,
 .imagenesCombos {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 200px;
-    padding: 20px 200px;
-    margin-top: 20px;
+    grid-auto-flow: column;
+    grid-auto-columns: 220px;
+    gap: 20px;
+    justify-content: center;
 }
 
-.imagenesCombos img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    transition: transform 0.3s ease;
-    cursor: pointer;
+
+/* === CADA PRODUCTO === */
+.hamburguesa-item {
+    background-color: #730202;
+    padding: 15px;
+    border-radius: 20px;
+    transition: transform 0.2s;
+    box-shadow: 0 0 10px #40010188;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 300px;
 }
-.imagenesCombos img:hover {
+
+
+.hamburguesa-item:hover {
+    transform: scale(1.03);
+}
+
+.image-preview {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 10px;
+}
+
+
+/* === BOTÓN AGREGAR === */
+.hamburguesa-item button {
+    background-color: #f2bb13;
+    color: #400101;
+    padding: 10px 15px;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+    box-shadow: 0 0 10px #f2bb13aa;
+}
+
+.hamburguesa-item button:hover {
+    background-color: #f29b30;
+    box-shadow: 0 0 15px #f2bb13;
     transform: scale(1.05);
 }
-.containerCombos{
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 100px 1fr 100px;
-    gap: 10px 10px;
-    text-align: center;
-    font-size: 75px;
-    font-style: italic;
-    font-weight: 700;
-}
-#categoriaCombos{
-    height: 25px;
-    width: 100%;
-    color: white;
-}
-/* fondo oscuro para modal */
+
+/* === MODAL === */
 .modal {
     display: none;
     position: fixed;
-    z-index: 20;
+    z-index: 999;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.7);
-    backdrop-filter: blur(3px);
-    animation: fadeIn 0.5s ease forwards;
-}
-
-/* Contenido del Modal */
-.modal-content {
-    background-color: #f2bb13;
-    color: #730202;
-    margin: 10% auto;
-    padding: 20px;
-    border-radius: 12px;
-    width: 50%;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
-    transform: translateY(-50px);
-    opacity: 0;
-    transition: all 0.5s ease;
-}
-
-/* mostrar modal */
-.modal.show .modal-content {
-    transform: translateY(0);
-    opacity: 1;
-}
-
-/* cerrar modal */
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    cursor: pointer;
-    transition: color 0.3s ease;
-}
-
-.close:hover {
-    color: #000;
-}
-
-/* animacion del fondo */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-.modal-title-estilo {
-    color: #730202;
-    font-size: 45px;
-    font-weight: bold;
-    margin-top: 35px;
-}
-
-.modal-description-estilo {
-    color: #bf0404;
-    font-size: 18px;
-    line-height: 1.5;
-    margin-top: 50px;
-    margin-bottom: 50px;
-}
-
-.hamburguesa-item button {
-    margin-top: 30px;
-    padding: 8px 12px;
-    background-color: #ffcc00;
-    border: 10px solid #730202;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.5s ease;
-    color: #730202;
-    font-size: 20px;
-    font-style: italic;
-    font-family: 'Kanit', sans-serif;
-    font-weight: 500;
-}
-
-.hamburguesa-item button:hover {
-    background-color: #ff9900;
-    scale: 1.10;
-}
-
-#footer{
-    display: flex;
-    color: white;
-    font-size: 20px;
-    width: 100%;
-    background-color: rgb(90, 3, 2);
-    padding: 50px;
-    font-style: normal;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.6);
     justify-content: center;
     align-items: center;
-    font-weight: 100;
 }
+
+.modal-content {
+    background-color: #f2bb13;
+    color: #400101;
+    padding: 20px;
+    border-radius: 15px;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 0 20px #f29b30;
+}
+
+.modal-content .close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #400101;
+}
+
+/* === FOOTER === */
+#footer {
+    background-color: #730202;
+    color: white;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border-top: 2px solid #f2bb13;
+}
+
+#footer img {
+    filter: drop-shadow(0 0 5px #f2bb13aa);
+}
+
 @media (max-width: 768px) {
-    /* -------- GENERAL -------- */
-    body {
-        font-size: 14px;
-        margin: 0;
-        padding: 0;
-    }
 
-    img {
-        max-width: 100%;
-        height: auto;
-        object-fit: cover;
-    }
-
-    button {
-        width: 90%;
-        padding: 12px;
-        font-size: 15px;
-        margin-top: 10px;
-        background-color: rgb(90, 3, 2);
-        color: white;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-    }
-
-    /* -------- HEADER -------- */
     #navlist {
-        display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        padding: 15px 20px;
-        background-color: #333;
-        color: white;
+        width: 100%;
     }
 
-    .left-section {
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        flex: 1;
-    }
-
+    .left-section,
     .right-section {
         display: flex;
         align-items: center;
+        gap: 10px;
+    }
+
+    .left-section {
+        justify-content: flex-start;
+    }
+
+    .right-section {
         justify-content: flex-end;
-        flex: 1;
     }
 
-    .logo-link {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        text-decoration: none;
-    }
-
-    .logo-link h1 {
-        font-size: 20px;
-        color: white;
-    }
-
-    #carrito {
-        width: 30px;
-        height: 30px;
-    }
-
+    .logoArriba,
     .contacto {
-        font-size: 14px;
-        color: white;
+        font-size: 18px;
     }
 
-    /* -------- BARRA DE CATEGORÍAS -------- */
+    #imgLogo,
+    #carrito {
+        width: 40px;
+        height: 40px;
+    }
+    /* BARRA DE CATEGORÍAS */
     #barraCategorias {
-        display: flex;
         flex-direction: column;
-        align-items: center;
-        gap: 10px;
-        padding: 15px 10px;
-        margin-top: 10px;
-        background-color: #f5f5f5;
-        border-radius: 6px;
+        gap: 8px;
+        text-align: center;
+        justify-items: center;
     }
 
     #barraCategorias a {
-        width: 90%;
-        text-align: center;
-        padding: 10px;
-        font-size: 16px;
-        background-color: #eee;
-        border-radius: 6px;
-        text-decoration: none;
-        color: black;
+        font-size: 24px;
+        padding: 8px 16px;
     }
 
-    /* -------- PRODUCTOS -------- */
+    /* TÍTULOS DE SECCIONES */
+    #categoriaHamburguesas,
+    #categoriaLomitos,
+    #categoriaMilanesas,
+    #categoriaPapas,
+    #categoriaCombos {
+        font-size: 32px;
+        text-align: center;
+        border-left: none;
+        padding-left: 0;
+    }
+
+    /* GRID DE PRODUCTOS */
     .imagenesHamburguesas,
     .imagenesLomitos,
     .imagenesMilanesas,
@@ -578,43 +317,32 @@ header {
     .imagenesCombos {
         display: flex;
         flex-direction: column;
-        align-items: center;
+        grid-template-columns: 1fr;
         gap: 20px;
     }
 
     .hamburguesa-item {
-        width: 100%;
-        max-width: 320px;
-        margin: 0 auto;
-        text-align: center;
-    }
-
-    .hamburguesa-item img {
-        width: 100%;
-        height: auto;
-        border-radius: 10px;
-    }
-
-    /* -------- MODAL -------- */
-    .modal-content {
         width: 90%;
-        font-size: 14px;
+        margin: 0 auto;
+        min-height: unset;
         padding: 20px;
     }
 
-    /* -------- FOOTER -------- */
-    #footer {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        padding: 30px 10px;
-        gap: 10px;
-        background-color: rgb(90, 3, 2);
-        color: white;
+    .image-preview {
+        width: 100%;
+        height: auto;
+        max-width: 300px;
     }
 
-    #footer img {
-        margin-bottom: 10px;
+    .hamburguesa-item button {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+
+    /* FOOTER */
+    #footer {
+        flex-direction: row;
+        text-align: center;
+        font-size: 14px;
     }
 }
