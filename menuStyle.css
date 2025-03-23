@@ -48,6 +48,7 @@ header {
     align-items: center;
     text-decoration: none;
     color: #f2bb13;
+    transition: all 0.5s ease;
 }
 
 #imgLogo {
@@ -65,19 +66,29 @@ header {
 .right-section {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 50px;
+    text-decoration: none;
 }
 
 #carrito {
     width: 50px;
     height: 50px;
     cursor: pointer;
+    text-decoration: none;
+    transition: all 0.5s ease;
 }
 
 .contacto {
+    text-decoration: none;
     color: #f2bb13;
     font-size: 50px;
+    font-weight: 700;
     margin: 0;
+    transition: all 0.5s ease;
+}
+
+.contacto:hover, .logo-link:hover, #carrito:hover{
+    transform: scale(1.05);
 }
 
 /* === BARRA DE CATEGORÍAS === */
@@ -240,15 +251,28 @@ header {
     color: white;
     padding: 20px;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 10px;
     border-top: 2px solid #f2bb13;
+    gap: 10px;
 }
 
-#footer img {
+#footerinfo {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Espacio entre la imagen y el texto */
+    text-align: center;
+}
+
+#footerinfo img {
     filter: drop-shadow(0 0 5px #f2bb13aa);
 }
+
+#derechos {
+    text-align: center;
+    color: gray;
+}
+
 
 @media (max-width: 768px) {
 
@@ -341,7 +365,7 @@ header {
 
     /* FOOTER */
     #footer {
-        flex-direction: row;
+        flex-direction: column;
         text-align: center;
         font-size: 14px;
     }
