@@ -3,12 +3,26 @@
     scroll-behavior: smooth;
     margin: 0;
     padding: 0;
+    font-family: 'Kanit', sans-serif;
+
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
-    background-image: url(/JrBurguesia/Flyers/Añadir\ un\ título\ \(Tu\ historia\)-6.png);
-    background-size: 50%;
+    font-family: 'Kanit', sans-serif;
+    background-image: url(Assets/fondo.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(64, 1, 1, 0.3); /* Bordó oscuro con opacidad */
+    z-index: -1;
 }
 
 /* Modifique header 11-3 */
@@ -19,7 +33,11 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 0%;
-    transition: 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.logo-header{
+    transition: all 0.5s ease;
 }
 
 .logo-header:hover {
@@ -33,21 +51,22 @@ body {
 }
 
 .titulo {
-    color: #730202;
-    font-weight: bold;
+    color: white;
+    font-weight: 700;
 }
 
-/* BARRA DE NAVEGACIÓN Menu - Donde estanos*/
+/* BARRA DE NAVEGACIÓN Menu - Donde estamos*/
 .navlist {
+    border-top: solid 3px #f2bb13;
     text-align: center;
     list-style: none;
     padding: 15px;
-    background: #400101;
+    background: rgb(85, 2, 2);
 }
 
 .navlist li {
     display: inline;
-    margin: 15px;
+    margin: 25px;
     transition: 0.5s ease;
 }
 
@@ -56,20 +75,20 @@ body {
     background-color: #f2bb13;
     border-radius: 30px;
     border: 1px solid #f2bb13;
-    padding: 5px;
+    padding: 15px;
 }
 
 .navlist a {
     color: white;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 700;
+    font-size: 25px;
 }
 
 .navlist a:hover{
     text-decoration: none;
     color: black;
 }
-
 
 /* SECCION PRODUCTOS */
 .productos-container {
@@ -114,6 +133,7 @@ body {
     font-weight: bold;
     text-decoration: none;
     transition: 0.5s ease;
+    font-size: 50px;
 }
 
 .boton:hover {
@@ -125,6 +145,9 @@ body {
 #nosotros {
     display: block;
     text-align: center;
+    font-size: 25px;
+    color: white;
+    font-weight: 700;
 }
 
 /* Palabra JR en negrita */
@@ -134,18 +157,29 @@ body {
 /* FIN SECCION NOSOTROS */
 
 /* INICIO FOOTER */
-footer {
-    background: #400101;
+#footer {
+    background-color: rgb(85, 2, 2);
     color: white;
-    padding: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
 }
 
-/* Iconos de redes sociales, para que haga un efecto */
-.color_icons:hover {
-    fill: #f2bb13;    
+#footerinfo {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Espacio entre la imagen y el texto */
+    text-align: center;
 }
 
-.social_icons a svg g:hover {
-    background-color: #164A41   ;
+#footerinfo img {
+    filter: drop-shadow(0 0 5px #f2bb13aa);
+}
+
+#derechos {
+    text-align: center;
+    color: gray;
 }
 /* FIN FOOTER */
