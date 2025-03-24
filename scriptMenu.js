@@ -10,16 +10,17 @@ function openModal(element) {
     // Insertar datos en el modal
     modalTitle.textContent = title;
     modalDescription.textContent = description;
-    
 
-    // Mostrar el modal con la animación
-    modal.style.display = "block";
+    // Aplicar estilos personalizados si querés
+    modalTitle.classList.add("modal-title-estilo");
+    modalDescription.classList.add("modal-description-estilo");
+
+    // Mostrar el modal
+    modal.classList.add("active"); // Hace visible y centra el modal
     setTimeout(() => {
-        modal.classList.add("show");
+        modal.classList.add("show"); // Para animación si usás .show
     }, 10);
 }
-modalTitle.classList.add("modal-title-estilo");
-modalDescription.classList.add("modal-description-estilo");
 
 function closeModal(event) {
     const modal = document.getElementById("infoModal");
@@ -28,7 +29,7 @@ function closeModal(event) {
     if (event.target.classList.contains("modal") || event.target.classList.contains("close")) {
         modal.classList.remove("show");
         setTimeout(() => {
-            modal.style.display = "none";
-        }, 500);
+            modal.classList.remove("active"); // Oculta el modal
+        }, 100);
     }
 }

@@ -222,7 +222,18 @@ header {
     background-color: rgba(0,0,0,0.6);
     justify-content: center;
     align-items: center;
+    transition: opacity 0.2s ease;
+    opacity: 0;
 }
+
+.modal.active {
+    display: flex;
+}
+
+.modal.show {
+    opacity: 1;
+}
+
 
 .modal-content {
     background-color: #f2bb13;
@@ -234,6 +245,8 @@ header {
     text-align: center;
     position: relative;
     box-shadow: 0 0 20px #f29b30;
+    justify-content: center;
+    align-items: center;
 }
 
 .modal-content .close {
