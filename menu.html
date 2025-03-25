@@ -22,7 +22,9 @@
                  </a>
             </div>
             <div class="right-section">
-                <img src="Assets/carrito-de-compras.png" alt="Carrito de compras" id="carrito">
+                <a href="carrito.html">
+                    <img src="Assets/carrito-de-compras.png" alt="Carrito de compras" id="carrito">
+                </a>
                 <a href="contacto.html" class="contacto">Contacto</a>
             </div>
         </nav>
@@ -40,23 +42,38 @@
         <div class="imagenesHamburguesas">
             <div class="hamburguesa-item">
                 <img src="Assets/IMG_0229.jpeg" alt="Cheeseburger" height="200" width="200" class="image-preview" data-title="Cheeseburger" data-description="Paty, Cheddar, Aderezo, Cebolla" onclick="openModal(this)">
-                <button onclick="addToCart('Cheeseburger')">AGREGAR AL CARRITO</button>
+                <div class="agregar-carrito">
+                    <input type="number" min="1" value="1" class="cantidad-input">
+                    <button onclick="addToCart(this)">AGREGAR AL CARRITO</button>
+                </div>                
             </div>
             <div class="hamburguesa-item">
                 <img src="Assets/IMG_0229.jpeg" alt="Mega" height="200" width="200" class="image-preview" data-title="Mega" data-description="Paty, Cheddar, Aderezo, Cebolla caramelizada, Bacon" onclick="openModal(this)">
-                <button onclick="addToCart('Mega')">AGREGAR AL CARRITO</button>
+                <div class="agregar-carrito">
+                    <input type="number" min="1" value="1" class="cantidad-input">
+                    <button onclick="addToCart(this)">AGREGAR AL CARRITO</button>
+                </div>
             </div>
             <div class="hamburguesa-item">
                 <img src="Assets/IMG_0229.jpeg" alt="Clásica" height="200" width="200" class="image-preview" data-title="Clásica" data-description="Paty, Cheddar, Aderezo, Huevo, Lechuga, Tomate" onclick="openModal(this)">
-                <button onclick="addToCart('Clásica')">AGREGAR AL CARRITO</button>
+                <div class="agregar-carrito">
+                    <input type="number" min="1" value="1" class="cantidad-input">
+                    <button onclick="addToCart(this)">AGREGAR AL CARRITO</button>
+                </div>
             </div>
             <div class="hamburguesa-item">
                 <img src="Assets/IMG_0229.jpeg" alt="Super" height="200" width="200" class="image-preview" data-title="Super" data-description="Paty, Cheddar, Aderezo, Cebolla, Huevo, Panceta" onclick="openModal(this)">
-                <button onclick="addToCart('Super')">AGREGAR AL CARRITO</button>
+                <div class="agregar-carrito">
+                    <input type="number" min="1" value="1" class="cantidad-input">
+                    <button onclick="addToCart(this)">AGREGAR AL CARRITO</button>
+                </div>
             </div>
             <div class="hamburguesa-item">
                 <img src="Assets/IMG_0229.jpeg" alt="BBQ" height="200" width="200" class="image-preview" data-title="BBQ" data-description="Paty, Cheddar, Aderezo, Panceta, Salsa Barbacoa" onclick="openModal(this)">
-                <button onclick="addToCart('BBQ')">AGREGAR AL CARRITO</button>
+                <div class="agregar-carrito">
+                    <input type="number" min="1" value="1" class="cantidad-input">
+                    <button onclick="addToCart(this)">AGREGAR AL CARRITO</button>
+                </div>
             </div>
         </div>
     </div>
@@ -66,7 +83,10 @@
         <div class="imagenesLomitos">
             <div class="hamburguesa-item">
                 <img src="Assets/IMG_0229.jpeg" alt="Cheeseburger" height="200" width="200" class="image-preview" data-title="Lomito" data-description="Paty, Cheddar, Aderezo, Cebolla" onclick="openModal(this)">
-                <button onclick="addToCart('Cheeseburger')">AGREGAR AL CARRITO</button>
+                <div class="agregar-carrito">
+                    <input type="number" min="1" value="1" class="cantidad-input">
+                    <button onclick="addToCart(this)">AGREGAR AL CARRITO</button>
+                </div>
             </div>
         </div>
     </div>
@@ -75,15 +95,24 @@
         <div class="imagenesMilanesas">
             <div class="hamburguesa-item">
                 <img src="Assets/IMG_0229.jpeg" alt="Cheeseburger" height="200" width="200" class="image-preview" data-title="Milanesa" data-description="Paty, Cheddar, Aderezo, Cebolla" onclick="openModal(this)">
-                <button onclick="addToCart('Cheeseburger')">AGREGAR AL CARRITO</button>
+                <div class="agregar-carrito">
+                    <input type="number" min="1" value="1" class="cantidad-input">
+                    <button onclick="addToCart(this)">AGREGAR AL CARRITO</button>
+                </div>
             </div>
             <div class="hamburguesa-item">
                 <img src="Assets/IMG_0229.jpeg" alt="Mega" height="200" width="200" class="image-preview" data-title="Milanesa Napolitana" data-description="Paty, Cheddar, Aderezo, Cebolla caramelizada, Bacon" onclick="openModal(this)">
-                <button onclick="addToCart('Mega')">AGREGAR AL CARRITO</button>
+                <div class="agregar-carrito">
+                    <input type="number" min="1" value="1" class="cantidad-input">
+                    <button onclick="addToCart(this)">AGREGAR AL CARRITO</button>
+                </div>
             </div>
             <div class="hamburguesa-item">
                 <img src="Assets/IMG_0229.jpeg" alt="Mega" height="200" width="200" class="image-preview" data-title="Sandwich de Milanesa" data-description="Paty, Cheddar, Aderezo, Cebolla caramelizada, Bacon" onclick="openModal(this)">
-                <button onclick="addToCart('Mega')">AGREGAR AL CARRITO</button>
+                <div class="agregar-carrito">
+                    <input type="number" min="1" value="1" class="cantidad-input">
+                    <button onclick="addToCart(this)">AGREGAR AL CARRITO</button>
+                </div>
             </div>
         </div>
     </div>
@@ -92,11 +121,17 @@
         <div class="imagenesPapas">
             <div class="hamburguesa-item">
                 <img src="Assets/IMG_0229.jpeg" alt="Cheeseburger" height="200" width="200" class="image-preview" data-title="Papas simples" data-description="Paty, Cheddar, Aderezo, Cebolla" onclick="openModal(this)">
-                <button onclick="addToCart('Cheeseburger')">AGREGAR AL CARRITO</button>
+                <div class="agregar-carrito">
+                    <input type="number" min="1" value="1" class="cantidad-input">
+                    <button onclick="addToCart(this)">AGREGAR AL CARRITO</button>
+                </div>
             </div>
             <div class="hamburguesa-item">
                 <img src="Assets/IMG_0229.jpeg" alt="Mega" height="200" width="200" class="image-preview" data-title="Papas con cheddar y bacon" data-description="Paty, Cheddar, Aderezo, Cebolla caramelizada, Bacon" onclick="openModal(this)">
-                <button onclick="addToCart('Mega')">AGREGAR AL CARRITO</button>
+                <div class="agregar-carrito">
+                    <input type="number" min="1" value="1" class="cantidad-input">
+                    <button onclick="addToCart(this)">AGREGAR AL CARRITO</button>
+                </div>
             </div>
         </div>
     </div>
@@ -105,23 +140,38 @@
         <div class="imagenesCombos">
             <div class="hamburguesa-item">
                 <img src="Assets/IMG_0229.jpeg" alt="Cheeseburger" height="200" width="200" class="image-preview" data-title="Cheeseburger" data-description="Paty, Cheddar, Aderezo, Cebolla" onclick="openModal(this)">
-                <button onclick="addToCart('Cheeseburger')">AGREGAR AL CARRITO</button>
+                <div class="agregar-carrito">
+                    <input type="number" min="1" value="1" class="cantidad-input">
+                    <button onclick="addToCart(this)">AGREGAR AL CARRITO</button>
+                </div>
             </div>
             <div class="hamburguesa-item">
                 <img src="Assets/IMG_0229.jpeg" alt="Mega" height="200" width="200" class="image-preview" data-title="Mega" data-description="Paty, Cheddar, Aderezo, Cebolla caramelizada, Bacon" onclick="openModal(this)">
-                <button onclick="addToCart('Mega')">AGREGAR AL CARRITO</button>
+                <div class="agregar-carrito">
+                    <input type="number" min="1" value="1" class="cantidad-input">
+                    <button onclick="addToCart(this)">AGREGAR AL CARRITO</button>
+                </div>
             </div>
             <div class="hamburguesa-item">
                 <img src="Assets/IMG_0229.jpeg" alt="Clásica" height="200" width="200" class="image-preview" data-title="Clásica" data-description="Paty, Cheddar, Aderezo, Huevo, Lechuga, Tomate" onclick="openModal(this)">
-                <button onclick="addToCart('Clásica')">AGREGAR AL CARRITO</button>
+                <div class="agregar-carrito">
+                    <input type="number" min="1" value="1" class="cantidad-input">
+                    <button onclick="addToCart(this)">AGREGAR AL CARRITO</button>
+                </div>
             </div>
             <div class="hamburguesa-item">
                 <img src="Assets/IMG_0229.jpeg" alt="Super" height="200" width="200" class="image-preview" data-title="Super" data-description="Paty, Cheddar, Aderezo, Cebolla, Huevo, Panceta" onclick="openModal(this)">
-                <button onclick="addToCart('Super')">AGREGAR AL CARRITO</button>
+                <div class="agregar-carrito">
+                    <input type="number" min="1" value="1" class="cantidad-input">
+                    <button onclick="addToCart(this)">AGREGAR AL CARRITO</button>
+                </div>
             </div>
             <div class="hamburguesa-item">
                 <img src="Assets/IMG_0229.jpeg" alt="BBQ" height="200" width="200" class="image-preview" data-title="BBQ" data-description="Paty, Cheddar, Aderezo, Panceta, Salsa Barbacoa" onclick="openModal(this)">
-                <button onclick="addToCart('BBQ')">AGREGAR AL CARRITO</button>
+                <div class="agregar-carrito">
+                    <input type="number" min="1" value="1" class="cantidad-input">
+                    <button onclick="addToCart(this)">AGREGAR AL CARRITO</button>
+                </div>
             </div>
         </div>
     </div>

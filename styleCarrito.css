@@ -1,0 +1,227 @@
+/* Reset básico */
+* {
+    font-family: 'Kanit', sans-serif;
+  }
+  
+  /* Estilos generales */
+  body {
+    margin: 0;
+    font-family: 'Kanit', sans-serif;
+    background: url("Assets/fondo.png") no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(64, 1, 1, 0.3); /* Bordó oscuro con opacidad */
+    z-index: -1;
+}
+  
+  /* === HEADER === */
+header {
+    background-color: #730202;
+    padding: 10px 20px;
+}
+
+#navlist {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* IZQUIERDA: Logo + Nombre */
+.left-section {
+    display: flex;
+    align-items: center;
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #f2bb13;
+    transition: all 0.5s ease;
+}
+
+#imgLogo {
+    height: 80px;
+    width: 80px;
+}
+
+.logoArriba {
+    font-size: 50px;
+    font-weight: 700;
+    margin: 0;
+}
+
+/* DERECHA: Carrito + Contacto */
+.right-section {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    text-decoration: none;
+}
+
+#carrito {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.5s ease;
+}
+
+.contacto {
+    text-decoration: none;
+    color: #f2bb13;
+    font-size: 50px;
+    font-weight: 700;
+    transition: all 0.5s ease;
+}
+
+.contacto:hover, .logo-link:hover, #carrito:hover {
+    transform: scale(1.05);
+}
+
+  
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: 700;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+  }
+  
+  main {
+    flex: 1; /* Ocupa todo el espacio restante */
+    border-top: 2px solid #f29b30;
+  }
+
+  /* Título principal */
+  main h2 {
+    font-size: 40px;
+    margin-top: 15px;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: white;
+    text-align: center;
+  }
+  
+  /* Contenedor del carrito */
+  #carrito-productos {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  
+  /* Item en el carrito */
+  .item-carrito {
+    background-color: #730202;
+    padding: 1rem;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.4);
+  }
+  
+  .info-producto h3 {
+    color: #f2bb13;
+    margin-bottom: 0.5rem;
+  }
+  
+  .info-producto p {
+    margin-bottom: 0.2rem;
+  }
+  
+  /* Botón eliminar */
+  .btn-eliminar {
+    background-color: #bf0404;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .btn-eliminar:hover {
+    background-color: #f29b30;
+    color: #400101;
+  }
+  
+  /* Total carrito */
+  .total-carrito {
+    text-align: center;
+    margin-top: 2rem;
+  }
+  
+  .total-carrito h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: white;
+  }
+  
+  .btn-finalizar {
+    background-color: #400101;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .btn-finalizar:hover {
+    background-color: #bf0404;
+  }
+  
+  #footer {
+    background-color: #730202;
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-top: 2px solid #f29b30;
+    gap: 10px;
+}
+
+#footerinfo {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Espacio entre la imagen y el texto */
+    text-align: center;
+}
+
+#footerinfo img {
+    filter: drop-shadow(0 0 5px #f2bb13aa);
+}
+
+#derechos {
+    text-align: center;
+    color: gray;
+}
+
