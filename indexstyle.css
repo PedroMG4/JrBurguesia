@@ -9,11 +9,12 @@
 
 body {
     font-family: 'Kanit', sans-serif;
-    background-image: url(Assets/fondo.png);
+    background-image: url(Assets/Fondo\ sin\ margen.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
+
 body::before {
     content: "";
     position: fixed;
