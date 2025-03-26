@@ -56,12 +56,6 @@ header {
     width: 80px;
 }
 
-.logoArriba {
-    font-size: 50px;
-    font-weight: 700;
-    margin: 0;
-}
-
 /* DERECHA: Carrito + Contacto */
 .right-section {
     display: flex;
@@ -298,7 +292,6 @@ header {
     font-size: 16px;
     font-weight: 700;
     border-radius: 10px;
-    font-style: italic;
     background-color: #f2bb13;
     font-family: 'Kanit', sans-serif;
     text-align: center;

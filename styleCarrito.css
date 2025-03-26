@@ -149,6 +149,8 @@ header {
   .info-producto h3 {
     color: #f2bb13;
     margin-bottom: 0.5rem;
+    font-size: 40px;
+    margin-top: -10px;
   }
   
   .info-producto p {
@@ -195,6 +197,20 @@ header {
   }
   
   .btn-finalizar:hover {
+    background-color: #bf0404;
+  }
+
+  .btn-volver{
+    background-color: #400101;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  .btn-volver:hover{
     background-color: #bf0404;
   }
   

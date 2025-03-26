@@ -29,6 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
     totalSection.classList.add('total-carrito');
     totalSection.innerHTML = `
         <h3>Total a pagar: $${total}</h3>
+        <button class="btn-volver">Continuar comprando</button>
         <button class="btn-finalizar">Finalizar Compra</button>
     `;
     contenedor.appendChild(totalSection);
@@ -41,5 +42,18 @@ document.addEventListener('DOMContentLoaded', () => {
             localStorage.setItem('carrito', JSON.stringify(carrito));
             location.reload(); // Recargar para actualizar vista
         }
+    });
+
+    // Redirigir al menú desde el botón "Continuar comprando"
+    const btnVolver = document.querySelector('.btn-volver');
+    btnVolver.addEventListener('click', () => {
+        window.location.href = 'menu.html';
+    });
+
+    // Podés agregar redirección desde "Finalizar Compra" también si querés:
+    const btnFinalizar = document.querySelector('.btn-finalizar');
+    btnFinalizar.addEventListener('click', () => {
+        // Por ejemplo, redirigir a una página de confirmación
+        window.location.href = 'finalizar.html'; // Cambiá esto si tenés otra página
     });
 });
