@@ -93,6 +93,7 @@
   .linkMenu:hover{
     background-color: white;
     transform: scale(1.05);
+    color: black
   }
 
   .logo-link:hover, #carrito:hover {

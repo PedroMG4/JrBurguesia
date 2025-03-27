@@ -26,71 +26,90 @@
     z-index: -1;
 }
   
-  /* === HEADER === */
 header {
-    background-color: #730202;
-    padding: 10px 20px;
+  background-color: #730202;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 3px solid #f2bb13;
 }
 
 #navlist {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
-/* IZQUIERDA: Logo + Nombre */
+/* IZQUIERDA */
 .left-section {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .logo-link {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: #f2bb13;
-    transition: all 0.5s ease;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #f2bb13;
+  transition: all 0.5s ease;
+  margin-left: 350px;
 }
 
 #imgLogo {
-    height: 80px;
-    width: 80px;
+  height: 80px;
+  width: 80px;
 }
 
 .logoArriba {
-    font-size: 50px;
-    font-weight: 700;
-    margin: 0;
+  font-size: 50px;
+  font-weight: 700;
+  margin: 0;
 }
 
-/* DERECHA: Carrito + Contacto */
+/* DERECHA */
 .right-section {
-    display: flex;
-    align-items: center;
-    gap: 50px;
-    text-decoration: none;
-}
-
-#carrito {
-    width: 50px;
-    height: 50px;
-    cursor: pointer;
-    text-decoration: none;
-    transition: all 0.5s ease;
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  text-decoration: none;
 }
 
 .contacto {
-    text-decoration: none;
-    color: #f2bb13;
-    font-size: 50px;
-    font-weight: 700;
-    transition: all 0.5s ease;
+  text-decoration: none;
+  color: #f2bb13;
+  font-size: 50px;
+  font-weight: 700;
+  transition: all 0.5s ease;
 }
 
-.contacto:hover, .logo-link:hover, #carrito:hover {
-    transform: scale(1.05);
+.contacto:hover,
+.logo-link:hover,
+.carrito-icono:hover {
+  transform: scale(1.05);
 }
+
+.carrito-icono {
+  position: relative;
+  display: flex;
+  margin-right: 350px;
+  transition: all 0.5s ease;
+  width: 50px;
+  height: 50px;
+}
+
+#carrito-cantidad {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: #f2bb13;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
 
   
   

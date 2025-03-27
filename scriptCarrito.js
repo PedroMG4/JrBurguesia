@@ -1,7 +1,19 @@
+function actualizarCarritoCantidad() {
+    const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    const totalCantidad = carrito.reduce((sum, item) => sum + item.cantidad, 0);
+
+    const badge = document.getElementById('carrito-cantidad');
+    if (badge) {
+        badge.textContent = totalCantidad;
+        badge.style.display = totalCantidad > 0 ? 'inline-block' : 'none';
+    }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
+    actualizarCarritoCantidad();
+
     const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
     const contenedor = document.getElementById('carrito-productos');
-
     contenedor.innerHTML = ''; // Limpiar contenido previo
 
     if (carrito.length === 0) {
@@ -12,7 +24,6 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
         `;
 
-        // Botón para volver al menú si el carrito está vacío
         const btnVolver = document.querySelector('.btn-volver');
         btnVolver.addEventListener('click', () => {
             window.location.href = 'menu.html';
@@ -51,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
     contenedor.appendChild(totalSection);
 
-    // Funcionalidad eliminar
+    // Eliminar producto
     contenedor.addEventListener('click', (e) => {
         if (e.target.classList.contains('btn-eliminar')) {
             const index = e.target.getAttribute('data-index');
@@ -61,26 +72,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Redirigir al menú desde el botón "Continuar comprando"
-    const btnVolver = document.querySelector('.btn-volver');
-    btnVolver.addEventListener('click', () => {
+    // Volver al menú
+    document.querySelector('.btn-volver').addEventListener('click', () => {
         window.location.href = 'menu.html';
     });
 
-    // Redirigir al finalizar compra
-    const btnFinalizar = document.querySelector('.btn-finalizar');
-    btnFinalizar.addEventListener('click', () => {
+    // Ir a finalizar compra
+    document.querySelector('.btn-finalizar').addEventListener('click', () => {
         window.location.href = 'finalizar.html';
     });
-});
-
-document.addEventListener('DOMContentLoaded', () => {
-    const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-    const totalCantidad = carrito.reduce((sum, item) => sum + item.cantidad, 0);
-
-    const badge = document.getElementById('carrito-cantidad');
-    if (badge) {
-        badge.textContent = totalCantidad;
-        badge.style.display = totalCantidad > 0 ? 'inline-block' : 'none';
-    }
 });
