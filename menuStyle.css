@@ -49,6 +49,7 @@ header {
     text-decoration: none;
     color: #f2bb13;
     transition: all 0.5s ease;
+    margin-left: 350px;
 }
 
 #imgLogo {
@@ -63,24 +64,6 @@ header {
     gap: 50px;
     text-decoration: none;
 }
-
-#carrito {
-    width: 50px;
-    height: 50px;
-    cursor: pointer;
-    text-decoration: none;
-    transition: all 0.5s ease;
-}
-
-.contacto {
-    text-decoration: none;
-    color: #f2bb13;
-    font-size: 50px;
-    font-weight: 700;
-    margin: 0;
-    transition: all 0.5s ease;
-}
-
 .contacto:hover, .logo-link:hover, #carrito:hover{
     transform: scale(1.05);
 }
@@ -279,22 +262,109 @@ header {
     text-align: center;
     color: gray;
 }
+
+#nombreProducto{
+    color: #f2bb13;
+    font-size: 25px;
+    padding: 20px;
+    padding-top: 10px;
+    font-weight: 700;
+    font-style: italic;
+}
 .agregar-carrito {
     display: flex;
-    gap: 10px;
+    flex-direction: column;
     align-items: center;
+    gap: 10px; /* Espacio entre los elementos */
     margin-top: 10px;
 }
+.variantes {
+    display: flex;
+    flex-direction: ROW;
+    align-items: flex-start;
+    gap: 5px;
+    color: #f2bb13;
+    
+}
 
-.cantidad-input {
-    width: 30px;
-    padding: 5px;
-    font-size: 16px;
-    font-weight: 700;
-    border-radius: 10px;
+.cantidad-control {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  /* Botones */
+  .btn-restar,
+  .btn-sumar {
+    width: 36px;
+    height: 30px;
     background-color: #f2bb13;
-    font-family: 'Kanit', sans-serif;
+    border: none;
+    border-radius: 8px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    position: relative;
+    top: -4px;
+  }
+  
+  .btn-restar:hover,
+  .btn-sumar:hover {
+    background-color: #f29b30;
+  }
+  
+  /* Wrapper que le da el estilo al input */
+  .cantidad-wrapper {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #f29b30;
+    border-radius: 8px;
+    background-color: #f2bb13;
+  }
+  
+  /* Input centrado al 100% */
+  .cantidad-input {
+    width: 100%;
+    height: 100%;
+    font-size: 20px;
+    align-items: center;
     text-align: center;
+    justify-content: center;
+    border: none;
+    background: transparent;
+    outline: none;
+    pointer-events: none;
+    padding-left: 18%;
+    font-weight: 700;
+  }
+
+  .carrito-icono {
+    position: relative;
+    display: flex;
+    margin-right: 350px;
+    transition: all 0.5s ease;
+    width: 50px;
+    height: 50px;
+}
+
+.carrito-icono:hover{
+    transform: scale(1.1);
+}
+
+#carrito-cantidad {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: #f2bb13;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 12px;
+    font-weight: bold;
 }
 
 @media (max-width: 768px) {

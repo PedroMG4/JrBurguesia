@@ -21,6 +21,7 @@ function openModal(element) {
         modal.classList.add("show"); // Para animación si usás .show
     }, 10);
 }
+
 function addToCart(buttonElement) {
     const contenedor = buttonElement.closest('.hamburguesa-item');
     const cantidadInput = contenedor.querySelector('.cantidad-input');
@@ -28,6 +29,12 @@ function addToCart(buttonElement) {
 
     const imagen = contenedor.querySelector('.image-preview');
     const producto = imagen.getAttribute('data-title');
+
+    // Obtener variante seleccionada
+    const varianteSeleccionada = contenedor.querySelector('input[type="radio"]:checked');
+    const variante = varianteSeleccionada
+        ? varianteSeleccionada.parentElement.textContent.trim()
+        : "Simple";
 
     // Simulación de precios (podés ajustar esto después)
     const precios = {
@@ -51,24 +58,28 @@ function addToCart(buttonElement) {
     // Obtener carrito actual o crear uno nuevo
     let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 
-    // Verificar si ya existe y sumar cantidad
-    const existente = carrito.find(item => item.nombre === producto);
+    // Verificar si ya existe mismo producto con misma variante
+    const existente = carrito.find(item => item.nombre === producto && item.variante === variante);
+
     if (existente) {
         existente.cantidad += cantidad;
     } else {
         carrito.push({
             nombre: producto,
             cantidad: cantidad,
-            precio: precioUnitario
+            precio: precioUnitario,
+            variante: variante
         });
     }
 
     // Guardar en localStorage
     localStorage.setItem('carrito', JSON.stringify(carrito));
 
-    alert(`Agregaste ${cantidad} "${producto}" al carrito.`);
-}
 
+
+    // Actualizar el número del carrito en el ícono
+    actualizarCarritoCantidad();
+}
 
 function closeModal(event) {
     const modal = document.getElementById("infoModal");
@@ -81,3 +92,41 @@ function closeModal(event) {
         }, 100);
     }
 }
+
+// Función para actualizar el número del carrito en el header
+function actualizarCarritoCantidad() {
+    const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    const totalCantidad = carrito.reduce((sum, item) => sum + item.cantidad, 0);
+
+    const badge = document.getElementById('carrito-cantidad');
+    if (badge) {
+        badge.textContent = totalCantidad;
+        badge.style.display = totalCantidad > 0 ? 'inline-block' : 'none';
+    }
+}
+
+// Sumar/restar cantidad dinámicamente
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.hamburguesa-item').forEach(item => {
+        const btnSumar = item.querySelector('.btn-sumar');
+        const btnRestar = item.querySelector('.btn-restar');
+        const input = item.querySelector('.cantidad-input');
+
+        btnSumar.addEventListener('click', () => {
+            let cantidad = parseInt(input.value) || 1;
+            cantidad++;
+            input.value = cantidad;
+        });
+
+        btnRestar.addEventListener('click', () => {
+            let cantidad = parseInt(input.value) || 1;
+            if (cantidad > 1) {
+                cantidad--;
+                input.value = cantidad;
+            }
+        });
+    });
+
+    // Al cargar la página, actualizar el número del carrito
+    actualizarCarritoCantidad();
+});

@@ -241,3 +241,12 @@ header {
     color: gray;
 }
 
+.carrito-vacio {
+  text-align: center;
+  padding: 40px;
+  font-size: 30px;
+}
+
+.carrito-vacio p {
+  margin-bottom: 20px;
+}

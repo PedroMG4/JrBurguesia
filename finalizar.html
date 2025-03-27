@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Finalizar Compra | JrBurguesía</title>
+  <link rel="stylesheet" href="finalizar.css" />
+</head>
+<header>
+    <div id="navlist">
+      <!-- Izquierda: Logo -->
+      <div class="left-section">
+        <a href="index.html" class="logo-link">
+          <img id="imgLogo" src="Assets/Fondo blanco, letras amarillas.png" alt="Logo" />
+        </a>
+      </div>
+  
+      <!-- Derecha: Menú y Carrito -->
+      <div class="right-section">
+        <a href="menu.html" class="linkMenu">Menú</a>
+        <a href="carrito.html">
+          <img id="carrito" src="Assets/carrito-de-compras.png" alt="Carrito" />
+        </a>
+      </div>
+    </div>
+  </header>
+  
+<body>
+
+  <!-- Contenido -->
+  <main class="contenido">
+    <h1>Finalizar Compra</h1>
+
+    <section id="resumen-carrito" class="resumen-carrito"></section>
+
+    <section class="formulario-cliente">
+      <h2>Datos del Cliente</h2>
+      <form id="formFinalizar">
+        <label for="nombre">Nombre completo:</label>
+        <input type="text" id="nombre" required />
+
+        <label for="direccion">Dirección de entrega:</label>
+        <input type="text" id="direccion" required />
+
+        <label for="telefono">Teléfono / Contacto:</label>
+        <input type="tel" id="telefono" required />
+
+        <button type="submit">Confirmar Pedido</button>
+      </form>
+    </section>
+
+    <section id="mensaje-exito" class="mensaje-exito" style="display: none;">
+      <h2>¡Gracias por tu compra!</h2>
+      <p>Tu pedido ha sido recibido y está en preparación. Te contactaremos en breve.</p>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <div id="footerinfo">
+        <img src="Assets/Fondo blanco, letras amarillas.png" alt="" height="30" width="30">
+        <div>JrBurguesia 2025 | Todos los derechos reservados ©</div>
+    </div><br>
+    <div id="derechos">
+        <div>Desarrollado por mPg</div>
+    </div>
+</footer>
+
+  <!-- JavaScript -->
+  <script src="finalizar.js"></script>
+</body>
+</html>

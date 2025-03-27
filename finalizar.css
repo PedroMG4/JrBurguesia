@@ -1,0 +1,276 @@
+/* Reset básico */
+* {
+    font-family: 'Kanit', sans-serif;
+  }
+  
+  body {
+    margin: 0;
+    background: url("Assets/Fondo sin margen.png") no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(64, 1, 1, 0.3);
+    z-index: -1;
+  }
+  
+  /* Header */
+  header {
+    background-color: #730202;
+    padding: 10px 20px;
+  }
+  
+  #navlist {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .left-section {
+    display: flex;
+    align-items: center;
+  }
+  
+.logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #f2bb13;
+    transition: all 0.5s ease;
+    margin-left: 350px;
+  }
+  
+  #imgLogo {
+    height: 80px;
+    width: 80px;
+  }
+  
+  .logoArriba {
+    font-size: 50px;
+    font-weight: 700;
+    margin: 0;
+  }
+  
+  .right-section {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    text-decoration: none;
+    margin-right: 350px;
+  }
+
+  
+  #carrito {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.5s ease;
+  }
+  
+  .linkMenu {
+    text-decoration: none;
+    color: #f2bb13;
+    font-size: 25px;
+    font-weight: 700;
+    transition: all 0.5s ease;
+    padding: 10px 20px;
+    border-radius: 20px;
+  }
+  
+  .linkMenu:hover{
+    background-color: white;
+    transform: scale(1.05);
+  }
+
+  .logo-link:hover, #carrito:hover {
+    transform: scale(1.05);
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: 700;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+  }
+  
+  main {
+    flex: 1;
+    border-top: 2px solid #f29b30;
+  }
+  
+  main h1, main h2 {
+    font-size: 40px;
+    margin-top: 15px;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: white;
+    text-align: center;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+  }
+  
+  /* Resumen del carrito */
+  .resumen-carrito, .formulario-cliente, .mensaje-exito {
+    max-width: 700px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #730202dd;
+    border-radius: 16px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.4);
+    color: white;
+  }
+  
+  .item-resumen {
+    background-color: #400101cc;
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #f2bb13;
+    box-shadow: 0 3px 5px rgba(0,0,0,0.3);
+  }
+  
+  .item-resumen p {
+    margin: 5px 0;
+    font-size: 18px;
+  }
+  
+  .item-resumen p strong {
+    color: #f2bb13;
+    font-size: 20px;
+  }
+  
+  .resumen-carrito p:last-child {
+    font-size: 22px;
+    color: #f29b30;
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  /* Formulario */
+  .formulario-cliente label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .formulario-cliente input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    box-sizing: border-box;
+  }
+  
+  .formulario-cliente button {
+    background-color: #f2bb13;
+    color: #400101;
+    font-weight: bold;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  .formulario-cliente button:hover {
+    background-color: #f29b30;
+  }
+  
+  /* Mensaje de éxito */
+  .mensaje-exito {
+    background-color: #e8ffe0;
+    color: #400101;
+    text-align: center;
+  }
+  
+  .mensaje-exito h2 {
+    color: #4caf50;
+    font-size: 32px;
+    margin-bottom: 10px;
+  }
+  
+  .mensaje-exito p {
+    font-size: 18px;
+  }
+  
+  /* Footer */
+  .site-footer {
+    background-color: #730202;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-top: 2px solid #f29b30;
+    margin-top: 40px;
+  }
+  /* === FOOTER === */
+#footer {
+    background-color: #730202;
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-top: 2px solid #f2bb13;
+    gap: 10px;
+}
+
+#footerinfo {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Espacio entre la imagen y el texto */
+    text-align: center;
+}
+
+#footerinfo img {
+    filter: drop-shadow(0 0 5px #f2bb13aa);
+}
+
+#derechos {
+    text-align: center;
+    color: gray;
+}
+  
+  /* Responsive */
+  @media screen and (max-width: 768px) {
+    .resumen-carrito,
+    .formulario-cliente,
+    .mensaje-exito {
+      margin: 20px;
+      padding: 15px;
+    }
+  
+    main h1, main h2 {
+      font-size: 32px;
+    }
+  
+    .formulario-cliente button {
+      width: 100%;
+    }
+  }

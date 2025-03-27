@@ -4,6 +4,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
     contenedor.innerHTML = ''; // Limpiar contenido previo
 
+    if (carrito.length === 0) {
+        contenedor.innerHTML = `
+            <div class="carrito-vacio">
+                <p>El carrito está vacío.</p>
+                <button class="btn-volver">Volver al menú</button>
+            </div>
+        `;
+
+        // Botón para volver al menú si el carrito está vacío
+        const btnVolver = document.querySelector('.btn-volver');
+        btnVolver.addEventListener('click', () => {
+            window.location.href = 'menu.html';
+        });
+
+        return;
+    }
+
     let total = 0;
 
     carrito.forEach((item, index) => {
@@ -14,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
         article.classList.add('item-carrito');
         article.innerHTML = `
             <div class="info-producto">
-                <h3>${item.nombre}</h3>
+                <h3>${item.nombre}${item.variante !== "Simple" ? ` (${item.variante})` : ''}</h3>
                 <p>Cantidad: ${item.cantidad}</p>
                 <p>Precio unitario: $${item.precio}</p>
                 <p>Total: $${subtotal}</p>
@@ -50,10 +67,20 @@ document.addEventListener('DOMContentLoaded', () => {
         window.location.href = 'menu.html';
     });
 
-    // Podés agregar redirección desde "Finalizar Compra" también si querés:
+    // Redirigir al finalizar compra
     const btnFinalizar = document.querySelector('.btn-finalizar');
     btnFinalizar.addEventListener('click', () => {
-        // Por ejemplo, redirigir a una página de confirmación
-        window.location.href = 'finalizar.html'; // Cambiá esto si tenés otra página
+        window.location.href = 'finalizar.html';
     });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    const totalCantidad = carrito.reduce((sum, item) => sum + item.cantidad, 0);
+
+    const badge = document.getElementById('carrito-cantidad');
+    if (badge) {
+        badge.textContent = totalCantidad;
+        badge.style.display = totalCantidad > 0 ? 'inline-block' : 'none';
+    }
 });
