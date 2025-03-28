@@ -203,6 +203,29 @@
   .formulario-cliente button:hover {
     background-color: #f29b30;
   }
+
+  /* Estilo para el checkbox y su texto */
+.checkbox-retiro {
+  display: flex;
+  width: 200px;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Estilo del input checkbox */
+.checkbox-retiro input[type="checkbox"] {
+  width: 14px;
+  height: 14px;
+  accent-color: #f2bb13; /* Estilo del check amarillo */
+  cursor: pointer;
+}
+
   
   /* Mensaje de éxito */
   .mensaje-exito {
