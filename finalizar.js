@@ -70,9 +70,17 @@ document.addEventListener('DOMContentLoaded', () => {
       });
 
       if (res.ok) {
+        const data = await res.json();
+
         document.querySelector('.formulario-cliente').style.display = 'none';
         document.getElementById('resumen-carrito').style.display = 'none';
-        document.getElementById('mensaje-exito').style.display = 'block';
+        const mensajeExito = document.getElementById('mensaje-exito');
+        mensajeExito.innerHTML = `
+          <h2>¡Gracias por tu compra!</h2>
+          <p>Tu número de pedido es: <strong>${data.pedidoId}</strong></p>
+          <p>Te enviamos un correo con los detalles. ¡Revisá tu bandeja de entrada!</p>
+        `;
+        mensajeExito.style.display = 'block';
 
         localStorage.removeItem('carrito');
         actualizarCarritoCantidad();
@@ -84,16 +92,17 @@ document.addEventListener('DOMContentLoaded', () => {
       alert('Error de conexión con el servidor');
     }
   });
+
   const retiroCheckbox = document.getElementById('retiroSucursal');
   const direccionInput = document.getElementById('direccion');
 
-      retiroCheckbox.addEventListener('change', () => {
-        if (retiroCheckbox.checked) {
-          direccionInput.disabled = true;
-          direccionInput.value = 'Retiro por sucursal';
-        } else {
-          direccionInput.disabled = false;
-          direccionInput.value = '';
-        }
-      });
+  retiroCheckbox.addEventListener('change', () => {
+    if (retiroCheckbox.checked) {
+      direccionInput.disabled = true;
+      direccionInput.value = 'Retiro por sucursal';
+    } else {
+      direccionInput.disabled = false;
+      direccionInput.value = '';
+    }
+  });
 });

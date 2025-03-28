@@ -159,12 +159,12 @@
   
   .item-resumen p strong {
     color: #f2bb13;
-    font-size: 20px;
+    font-size: 30px;
   }
   
   .resumen-carrito p:last-child {
-    font-size: 22px;
-    color: #f29b30;
+    font-size: 40px;
+    color: #f2bb13;
     text-align: center;
     margin-top: 10px;
   }
@@ -235,7 +235,7 @@
   }
   
   .mensaje-exito h2 {
-    color: #4caf50;
+    color: #730202;
     font-size: 32px;
     margin-bottom: 10px;
   }

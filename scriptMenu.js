@@ -26,60 +26,70 @@ function addToCart(buttonElement) {
     const contenedor = buttonElement.closest('.hamburguesa-item');
     const cantidadInput = contenedor.querySelector('.cantidad-input');
     const cantidad = parseInt(cantidadInput.value) || 1;
-
+  
     const imagen = contenedor.querySelector('.image-preview');
     const producto = imagen.getAttribute('data-title');
-
-    // Obtener variante seleccionada
-    const varianteSeleccionada = contenedor.querySelector('input[type="radio"]:checked');
-    const variante = varianteSeleccionada
-        ? varianteSeleccionada.parentElement.textContent.trim()
-        : "Simple";
-
-    // Simulación de precios (podés ajustar esto después)
-    const precios = {
-        'Cheeseburger': 2500,
-        'Mega': 3000,
-        'Clásica': 2700,
-        'Super': 3200,
-        'BBQ': 2900,
-        'Lomito': 3500,
-        'Milanesa': 2800,
-        'Milanesa Napolitana': 3100,
-        'Sandwich de Milanesa': 3000,
-        'Papas simples': 1600,
-        'Papas con cheddar y bacon': 1800,
-        'Cheeseburguesa Clásica': 2500,
-        'Papas con Cheddar': 1800
-    };
-
-    const precioUnitario = precios[producto] || 2500;
-
-    // Obtener carrito actual o crear uno nuevo
-    let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-
-    // Verificar si ya existe mismo producto con misma variante
-    const existente = carrito.find(item => item.nombre === producto && item.variante === variante);
-
-    if (existente) {
-        existente.cantidad += cantidad;
-    } else {
-        carrito.push({
-            nombre: producto,
-            cantidad: cantidad,
-            precio: precioUnitario,
-            variante: variante
-        });
+  
+    // Verificar si el producto tiene variantes (hamburguesas)
+    const tieneVariantes = contenedor.querySelector('input[type="radio"]');
+    let variante = "Única";
+  
+    if (tieneVariantes) {
+      const varianteSeleccionada = contenedor.querySelector('input[type="radio"]:checked');
+      if (!varianteSeleccionada) {
+        alert("Por favor, seleccioná una variante: Simple, Doble o Triple.");
+        return;
+      }
+      variante = varianteSeleccionada.parentElement.textContent.trim();
     }
-
-    // Guardar en localStorage
+  
+    const precios = {
+      'Cheeseburger': { 'Simple': 2500, 'Doble': 3000, 'Triple': 3500 },
+      'Mega':         { 'Simple': 2800, 'Doble': 3300, 'Triple': 3800 },
+      'Clásica':      { 'Simple': 2700, 'Doble': 3200, 'Triple': 3700 },
+      'Super':        { 'Simple': 3000, 'Doble': 3500, 'Triple': 4000 },
+      'BBQ':          { 'Simple': 2900, 'Doble': 3400, 'Triple': 3900 },
+      'Lomito': 3500,
+      'Milanesa': 2800,
+      'Milanesa Napolitana': 3100,
+      'Sandwich de Milanesa': 3000,
+      'Papas simples': 1600,
+      'Papas con cheddar y bacon': 1800,
+      'Cheeseburguesa Clásica': 2500,
+      'Papas con Cheddar': 1800
+    };
+  
+    let precioUnitario = 2500;
+  
+    if (precios[producto]) {
+      if (typeof precios[producto] === 'object') {
+        precioUnitario = precios[producto][variante] || 2500;
+      } else {
+        precioUnitario = precios[producto];
+      }
+    }
+  
+    let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+  
+    const existente = carrito.find(item => item.nombre === producto && item.variante === variante);
+    if (existente) {
+      existente.cantidad += cantidad;
+    } else {
+      carrito.push({
+        nombre: producto,
+        cantidad: cantidad,
+        precio: precioUnitario,
+        variante: variante
+      });
+    }
+  
     localStorage.setItem('carrito', JSON.stringify(carrito));
-
-
-
-    // Actualizar el número del carrito en el ícono
+  
     actualizarCarritoCantidad();
-}
+  
+    alert(`Agregaste ${cantidad} "${producto} (${variante})" al carrito.`);
+  } 
+  
 
 function closeModal(event) {
     const modal = document.getElementById("infoModal");
