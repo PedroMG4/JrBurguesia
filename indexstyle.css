@@ -52,38 +52,43 @@ body::before {
 }
 
 .titulo {
-    color: white;
+    color: black;
+    font-weight: bold;
     font-weight: 700;
 }
 
 /* BARRA DE NAVEGACIÓN Menu - Donde estamos*/
 .navlist {
     border-top: solid 3px #f2bb13;
+    border-bottom: solid 3px #f2bb13;
     text-align: center;
     list-style: none;
-    padding: 15px;
+    padding: 10px;
     background: rgb(85, 2, 2);
 }
 
 .navlist li {
     display: inline;
-    margin: 25px;
+    margin: 3px;
     transition: 0.5s ease;
+    margin: 0 auto;
 }
+
 
 .navlist li:hover{
     color: black;
     background-color: #f2bb13;
     border-radius: 30px;
     border: 1px solid #f2bb13;
-    padding: 15px;
+    padding: 5px;
 }
 
 .navlist a {
     color: white;
     text-decoration: none;
     font-weight: 700;
-    font-size: 25px;
+    font-size: 18px;
+    width: 155px;
 }
 
 .navlist a:hover{
@@ -92,7 +97,7 @@ body::before {
 }
 
 /* SECCION PRODUCTOS */
-.productos-container {
+.productos {
     display: flex;
     justify-content: center;
     gap: 20px;
@@ -116,7 +121,7 @@ body::before {
 
 .producto img {
     width: 100%; /* Para que ocupen todo el ancho del contenedor */
-    height: auto; /* Mantiene la proporción */
+    height: fit-content; /* Mantiene la proporción */
     max-width: 250px; /* Limita el tamaño máximo */
     display: block;
     margin: 0 auto; /* Centra la imagen */
@@ -124,7 +129,7 @@ body::before {
 }
 /* FIN SECCION PRODUCTOS */
 
-/* BOTONES */
+/* BOTONES *//*
 .boton {
     background: #F1B24A;
     scroll-behavior: smooth;
@@ -140,15 +145,14 @@ body::before {
 .boton:hover {
     background: #4D774E;
     color: white;
-}
+}*/
 
 /* INICIO SECCION NOSOTROS */ 
 #nosotros {
     display: block;
     text-align: center;
-    font-size: 25px;
-    color: white;
-    font-weight: 700;
+    font-size: 20px;
+    color: black;
 }
 
 /* Palabra JR en negrita */
@@ -160,23 +164,12 @@ body::before {
 /* INICIO FOOTER */
 #footer {
     background-color: rgb(85, 2, 2);
+    border-top: solid 3px #f2bb13;
     color: white;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
+    padding: 10px; 
+    display: block;
     align-items: center;
-    gap: 10px;
-}
-
-#footerinfo {
-    display: flex;
-    align-items: center;
-    gap: 15px; /* Espacio entre la imagen y el texto */
-    text-align: center;
-}
-
-#footerinfo img {
-    filter: drop-shadow(0 0 5px #f2bb13aa);
+    /*gap: 10px;*/
 }
 
 #derechos {

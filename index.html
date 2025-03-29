@@ -31,28 +31,44 @@
     </header>
 
     <!-- NAVEGACIÓN MODERNA -->
-    <nav>
-        <ul class="navlist">
-            <li><a href="menu.html">Menú</a></li>
-            <li><a href="contacto.html">Dónde estamos</a></li>
-        </ul>
+    <nav class="navlist navbar navbar-expand-sm navbar-primary">
+        <div class="container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span style="display: block; width: 25px; height: 3px; background-color: #f2bb13; margin: 4px 0;"></span>
+                    <span style="display: block; width: 25px; height: 3px; background-color: #f2bb13; margin: 4px 0;"></span>
+                    <span style="display: block; width: 25px; height: 3px; background-color: #f2bb13; margin: 4px 0;"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+                <ul class="navbar-nav mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="menu.html">Menú</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contacto.html">Dónde estamos</a></li>
+                </ul>
+           </div>
+        </div>
     </nav>
 
     <!-- SECCIÓN PRODUCTOS DESTACADOS  -->   
-    <section id="productos">
+    <section id="container productos">
         <h2 class="d-flex justify-content-center titulo">Nuestras categorias destacadas</h2>
         <br>
-        <div class="productos-container">
+        <div class="container productos">
+            <div class="producto">
+                <a href="menu.html#Combos">
+                    <img src="/JrBurguesia/FOTOS CRUDAS/Bebibas 🥤/IMG_0509.jpeg" alt="Bebidas">
+                </a>
+                <h3 class="d-flex justify-content-center">Combos</h3>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+            </div>
             <div class="producto">
                 <a href="menu.html#Bebidas">
-                    <img src="/JrBurguesia/FOTOS CRUDAS/Bebibas 🥤/IMG_0509.jpeg" alt="Bebidas">
+                    <img src="/Assets/Fotos_portada/IMG_0512.jpeg" alt="Bebidas">
                 </a>
                 <h3 class="d-flex justify-content-center">Bebidas</h3>
                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
             </div>
             <div class="producto">
                 <a href="menu.html#categoriaHamburguesas">
-                    <img src="/JrBurguesia/FOTOS CRUDAS/Hamburguesas🍔/IMG_0245.jpeg" alt="Hamburguesas">
+                    <img src="/Assets/Fotos_portada/IMG_0239.jpeg" alt="Hamburguesas">
                  </a>    
                 <h3 class="d-flex justify-content-center">Hamburguesas</h3>
                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
@@ -89,10 +105,9 @@
 
     <!-- FOOTER -->
     <footer id="footer">
-        <div id="footerinfo">
-            <img src="Assets/Fondo blanco, letras amarillas.png" alt="" height="30" width="30">
-            <div>JrBurguesia 2025 | Todos los derechos reservados ©</div>
-        </div><br>
+        <div class="d-flex justify-content-center">
+            <p> <strong class="texto_JR_Burguesia">2025 JR Burguesia 🍔</strong> | &copy; Todos los derechos reservados</p>
+        </div>
         <div id="derechos">
             <div>Desarrollado por mPg</div>
         </div>
