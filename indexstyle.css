@@ -56,6 +56,7 @@ body::before {
     color: black;
     font-weight: bold;
     font-weight: 700;
+    text-align: center;
 }
 
 /* BARRA DE NAVEGACIÓN Menu - Donde estamos*/
@@ -175,6 +176,7 @@ body::before {
     color: white;
 }*/
 
+/* Boton flotante de Whastapp */
 .whatsapp-btn {
     position: fixed;
     bottom: 20px;
@@ -245,9 +247,7 @@ body::before {
     border-top: solid 3px #f2bb13;
     color: white;
     padding: 10px; 
-    display: block;
-    align-items: center;
-    /*gap: 10px;*/
+    text-align: center;
 }
 
 #derechos {
