@@ -83,11 +83,10 @@ header {
     color: black;
 }
 
-.carrito-menu {
-    color: black;
-    fill: white;
-}
+.cart:hover {
+    fill: black;
 
+}
 /* Boton flotante Whastapp */
 .whatsapp-btn {
     position: fixed;
@@ -142,6 +141,9 @@ header {
 /* SECCIÓN CONTACTO */
 #contacto {
     padding: 20px 10px;
+    display: block;
+    text-align: center;
+    margin: 0 auto;
 }
 
 #contacto h2 {
@@ -149,27 +151,36 @@ header {
     color: #730202;
     font-weight: 700;
     margin-bottom: 15px;
-    text-align: center;
 }
 
 #contacto p {
     font-size: 18px;
     font-weight: 700;
     margin-bottom: 20px;
-    text-align: center;
 }
 
+
 .contacto-info {
+   display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 20px;
+    justify-content: center;
+    gap: 60px;
+}
+
+.contacto-datos {
     background-color: #730202;
     color: white;
     padding: 15px;
     border-radius: 10px;
     box-shadow: #730202;
     max-width: 400px;
-    margin: 0 auto 20px;
+    height: fit-content;
+    text-align: start;
 }
 
-.contacto-info p {
+.contacto-datos p {
     margin: 10px 0;
     font-size: 15px;
     font-weight: 500;
@@ -192,45 +203,12 @@ header {
 }
 
 /* Google Maps */
-.map-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
-}
-
 iframe {
-    width: 100%;
-    max-width: 600px;
     height: 450px;
     border-radius: 10px;
-}
-
-/* ICONOS DE REDES */
-.icons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 10px;
-    margin-bottom: 15px;
-}
-
-.icons a {
-    font-size: 22px;
-    color: #730202;
-    font-weight: 700;
-    transition: transform 0.5s ease-in-out;
-    text-decoration: none;
-    text-align: center;
-}
-
-.ri-instagram-line:hover {
-    color: #f2bb13;
-    background-color: #400101;
-    border-radius: 30px;
-    transition: 0.5s ease;
-    font-weight: 700;
-    border: 1px solid #f2bb13;
-    padding: 5px;
+    aspect-ratio: 16 / 9;
+    max-width: 800px;
+    width: 100%;
 }
 
 /* INICIO FOOTER */
