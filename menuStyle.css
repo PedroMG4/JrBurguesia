@@ -1,17 +1,20 @@
-*{
+/* Estilos generales */
+* {
     scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Kanit', sans-serif;
 }
 
 body {
-    margin: 0;
     font-family: 'Kanit', sans-serif;
-    background: url("Assets/Fondo\ sin\ margen.png") no-repeat center center fixed;
+    background-image: url(Assets/Fondo\ sin\ margen.png);
     background-size: cover;
-    color: white;
-    position: relative;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
-/* Capa de oscurecimiento sobre el fondo */
 body::before {
     content: "";
     position: fixed;
@@ -23,118 +26,168 @@ body::before {
     z-index: -1;
 }
 
-header {
-    background-color: #730202;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    border-bottom: 3px solid #f2bb13;
+/* Boton flotante Whastapp */
+.whatsapp-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #25D366;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    animation: breathe 2s ease-in-out infinite;
   }
   
-  #navlist {
+  /*Estilos solo al icono whatsapp*/
+  .whatsapp-btn i {
+    color: #fff;
+    font-size: 24px;
+    animation: beat 2s ease-in-out infinite;
+    text-decoration: none;
+  }
+  
+  /*Estilos con animation contorno respirando*/
+  @keyframes breathe {
+    0% {
+      box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5);
+    }
+    70% {
+      box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    }
+  }
+  
+  /*Estilos de animacion del icono latiendo*/
+  @keyframes beat {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  /* HEADER / NAVBAR */
+header {  
+    background: #400101;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-top: solid 3px #f2bb13;
+    border-bottom: solid 3px #f2bb13;
+}
+
+/* Contenedor del header */
+.headermenu {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
-  }
-  
-  /* IZQUIERDA */
-  .left-section {
-    display: flex;
-    align-items: center;
-  }
-  
-  .logo-link {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: #f2bb13;
-    transition: all 0.5s ease;
-    margin-left: 350px;
-  }
-  
-  #imgLogo {
-    height: 80px;
-    width: 80px;
-  }
-  
-  .logoArriba {
-    font-size: 50px;
-    font-weight: 700;
-    margin: 0;
-  }
-  
-  /* DERECHA */
-  .right-section {
-    display: flex;
-    align-items: center;
-    gap: 50px;
-    text-decoration: none;
-  }
-  
-  .contacto {
-    text-decoration: none;
-    color: #f2bb13;
-    font-size: 50px;
-    font-weight: 700;
-    transition: all 0.5s ease;
-  }
-  
-  .contacto:hover,
-  .logo-link:hover,
-  .carrito-icono:hover {
-    transform: scale(1.05);
-  }
-  
-  .carrito-icono {
-    position: relative;
-    display: flex;
-    margin-right: 350px;
-    transition: all 0.5s ease;
-    width: 50px;
-    height: 50px;
-  }
-  
-  #carrito-cantidad {
-    position: absolute;
-    top: -8px;
-    right: -8px;
-    background-color: #f2bb13;
-    color: white;
-    border-radius: 50%;
-    padding: 2px 6px;
-    font-size: 12px;
-    font-weight: bold;
-  }
-  
-
-/* === BARRA DE CATEGORÍAS === */
-#barraCategorias {
-    background-color: #400101;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 12px;
-    gap: 12px;
-    border-top: 3px solid #f29b30;
-    border-bottom: 3px solid #f29b30;
-}
-
-#barraCategorias a {
-    color: #400101;
-    background-color: #f2bb13;
+    width: 100%;
+    max-width: 1200px;
     padding: 10px 20px;
-    border-radius: 25px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: background 0.3s, transform 0.2s;
-    font-size: 35px;
 }
 
-#barraCategorias a:hover {
-    background-color: #f29b30;
-    transform: scale(1.05);
+/* Logo */
+.logoencontacto {
+    width: 65px;
+    transition: transform 0.3s ease-in-out;
 }
+
+.logoencontacto:hover {
+    transform: scale(1.07);
+}
+
+/* Barra de navegación */
+.navlistmenu {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 0 auto;
+}
+
+.navlistmenu li {
+    display: inline;
+    margin: 5px;
+    transition: 0.5s ease;
+    margin: 0 auto;
+}
+
+.navlistmenu li:hover {
+    color: black;
+    background-color: #f2bb13;
+    border-radius: 30px;
+    border: 1px solid #f2bb13;
+    padding: 7px;
+}
+
+.navlistmenu a {
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 18px;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.navlistmenu a:hover {
+    text-decoration: none;
+    color: black;
+}
+
+li a:hover svg .cart {
+    fill: black !important;
+}  
+/* BARRA DE NAVEGACIÓN con las categorias */
+.navlist {
+    border-bottom: solid 3px #f2bb13;
+    text-align: center;
+    list-style: none;
+    padding: 10px;
+    background: #730202;
+}
+
+.navlist li {
+    display: inline;
+    margin: 3px;
+    transition: 0.5s ease;
+    margin: 0 auto;
+}
+
+
+.navlist li:hover{
+    color: black;
+    background-color: #f2bb13;
+    border-radius: 30px;
+    border: 1px solid #f2bb13;
+    padding: 3px;
+}
+
+.navlist a {
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 18px;
+    width: 155px;
+}
+
+.navlist a:hover{
+    text-decoration: none;
+    color: black;
+}
+
 
 /* === CONTENEDORES DE CATEGORÍAS === */
 .containerHamburguesas,
@@ -275,27 +328,18 @@ header {
     color: #400101;
 }
 
-/* === FOOTER === */
-#footer {
-    background-color: #730202;
+/* INICIO FOOTER */
+footer {
+    background: #400101;
+    border-top: solid 3px #f2bb13;
     color: white;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-top: 2px solid #f2bb13;
-    gap: 10px;
-}
-
-#footerinfo {
-    display: flex;
-    align-items: center;
-    gap: 15px; /* Espacio entre la imagen y el texto */
+    padding: 10px;
     text-align: center;
 }
 
-#footerinfo img {
-    filter: drop-shadow(0 0 5px #f2bb13aa);
+/* Palabra JR en negrita */
+.texto_JR_Burguesia {
+    margin-right: 1px;
 }
 
 #derechos {
@@ -303,28 +347,31 @@ header {
     color: gray;
 }
 
+/* FIN FOOTER */
+
 #nombreProducto{
     color: #f2bb13;
     font-size: 25px;
-    padding: 20px;
-    padding-top: 10px;
+    padding: 10px;
+    padding-top: 5px;
     font-weight: 700;
     font-style: italic;
 }
+
 .agregar-carrito {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px; /* Espacio entre los elementos */
+    gap: 2px; /* Espacio entre los elementos */
     margin-top: 10px;
 }
+
 .variantes {
     display: flex;
-    flex-direction: ROW;
+    flex-direction: row;
     align-items: flex-start;
     gap: 5px;
     color: #f2bb13;
-    
 }
 
 .cantidad-control {
@@ -380,6 +427,7 @@ header {
     pointer-events: none;
     padding-left: 18%;
     font-weight: 700;
+    display: flex;
   }
 
 @media (max-width: 768px) {

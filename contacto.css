@@ -15,6 +15,17 @@ body {
     background-attachment: fixed;
 }
 
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(64, 1, 1, 0.3); /* Bordó oscuro con opacidad */
+    z-index: -1;
+}
+
 /* HEADER / NAVBAR */
 header {
     position: relative;
