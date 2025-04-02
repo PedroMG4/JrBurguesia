@@ -37,7 +37,7 @@ function mostrarResumenCarrito() {
   });
 
   const totalP = document.createElement('p');
-  totalP.innerHTML = `<strong>Total a pagar: $${total}</strong>`;
+  totalP.innerHTML = `<strong>Total a pagar: $ ${total}</strong>`;
   resumen.appendChild(totalP);
 }
 
