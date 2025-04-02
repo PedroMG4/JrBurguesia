@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const totalSection = document.createElement('section');
     totalSection.classList.add('total-carrito');
     totalSection.innerHTML = `
-        <h3>Total a pagar: $ ${total}</h3>
+        <h3 style="font-size: 30px; font-weight: 700;">Total a pagar: $ ${total}</h3>
         <div class="botones-continuar-finalizar"> 
             <button class="btn-volver">Continuar compra</button>
             <button class="btn-finalizar">Finalizar Compra</button>

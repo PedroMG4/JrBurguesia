@@ -162,7 +162,7 @@ li a:hover svg .cart {
   }
   
   main h1, main h2 {
-    font-size: 40px;
+    font-size: 30px;
     margin-top: 15px;
     font-weight: 700;
     margin-bottom: 1.5rem;
@@ -184,28 +184,33 @@ li a:hover svg .cart {
   
   .item-resumen {
     background-color: #400101cc;
-    padding: 15px;
+    padding: 8px;
     border-radius: 12px;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
     border: 1px solid #f2bb13;
     box-shadow: 0 3px 5px rgba(0,0,0,0.3);
   }
   
-  .item-resumen p {
+  .item-resumen p strong {
+    color: #f2bb13;
+    font-size: 20px;
+  }
+  
+  .descripcion-item-resumen {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .cantidad-descripcion-item-resumen, .subtotal-descripcion-item-resumen{
     margin: 5px 0;
     font-size: 18px;
   }
-  
-  .item-resumen p strong {
-    color: #f2bb13;
-    font-size: 30px;
-  }
-  
+
   .resumen-carrito p:last-child {
-    font-size: 40px;
+    font-size: 20px;
     color: #f2bb13;
     text-align: center;
-    margin-top: 10px;
+    margin-top: 5px;
   }
   
   /* Formulario */

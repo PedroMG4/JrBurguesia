@@ -155,7 +155,6 @@ li a:hover svg .cart {
   fill: black !important;
 }  
 
-
 main {
   min-height: calc(100vh - 100px - 100px); /* Altura mínima para ocupar toda la página menos el header y footer */
   display: flex;
@@ -252,7 +251,7 @@ main h2 {
     background-color: #400101;
     color: white;
     border: none;
-    padding: 8px;
+    padding: 10px;
     font-size: 20px;
     border-radius: 12px;
     cursor: pointer;
@@ -263,20 +262,21 @@ main h2 {
     color: black;
     background-color: #f2bb13;
     border: 1px solid #f2bb13;
-    padding: 9px;
+    padding: 11px;
     font-size: 21px;
     transition: 0.3s ease;
+    font-weight: 700;
   }
 
   .btn-volver{
     background-color: #400101;
     color: white;
     border: none;
-    padding: 8px;
+    padding: 10px;
     font-size: 20px;
     border-radius: 12px;
     cursor: pointer;
-    /*transition: background-color 0.5s;*/
+    /* transition: background-color 0.5s;*/
   }
 
   
@@ -284,9 +284,10 @@ main h2 {
     color: black;
     background-color: #f2bb13;
     border: 1px solid #f2bb13;
-    padding: 9px;
-    font-size: 21px;
+    padding: 11px;
+    font-size: 20px;
     transition: 0.3s ease;
+    font-weight: 700;
 }
     
 /* INICIO FOOTER */

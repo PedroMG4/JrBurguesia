@@ -29,8 +29,10 @@ function mostrarResumenCarrito() {
     div.classList.add('item-resumen');
     div.innerHTML = `
       <p><strong>${item.nombre}${item.variante !== 'Simple' ? ' (' + item.variante + ')' : ''}</strong></p>
-      <p>Cantidad: ${item.cantidad}</p>
-      <p>Subtotal: $${subtotal}</p>
+      <div class="descripcion-item-resumen">
+        <p class="cantidad-descripcion-item-resumen">Cantidad: ${item.cantidad}</p>
+        <p class="subtotal-descripcion-item-resumen">Subtotal: $${subtotal}</p>
+      </div>
       <hr>
     `;
     resumen.appendChild(div);
@@ -38,6 +40,7 @@ function mostrarResumenCarrito() {
 
   const totalP = document.createElement('p');
   totalP.innerHTML = `<strong>Total a pagar: $ ${total}</strong>`;
+  totalP.style.fontSize = '30px';
   resumen.appendChild(totalP);
 }
 

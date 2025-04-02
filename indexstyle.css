@@ -214,6 +214,8 @@ body::before {
     text-align: center;
     font-size: 20px;
     color: black;
+    max-width: 90%;
+    margin: 0 auto;
 }
 
 /* Palabra JR en negrita */

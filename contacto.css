@@ -102,7 +102,6 @@ li a:hover svg .cart {
     fill: black !important;
 }
 
-
 /* Boton flotante Whastapp */
 .whatsapp-btn {
     position: fixed;
@@ -223,7 +222,7 @@ iframe {
     height: 450px;
     border-radius: 10px;
     aspect-ratio: 16 / 9;
-    max-width: 800px;
+    max-width: 600px;
     width: 100%;
 }
 
