@@ -1,152 +1,184 @@
-/* Reset básico */
+/* Estilos generales */
 * {
-    font-family: 'Kanit', sans-serif;
-  }
-  
-  /* Estilos generales */
-  body {
-    margin: 0;
-    font-family: 'Kanit', sans-serif;
-    background: url("Assets/Fondo\ sin\ margen.png") no-repeat center center fixed;
-    background-size: cover;
-    color: white;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
-  body::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(64, 1, 1, 0.3); /* Bordó oscuro con opacidad */
-    z-index: -1;
-}
-  
-header {
-  background-color: #730202;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  border-bottom: 3px solid #f2bb13;
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Kanit', sans-serif;
 }
 
-#navlist {
+body {
+  font-family: 'Kanit', sans-serif;
+  background-image: url(Assets/Fondo\ sin\ margen.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(64, 1, 1, 0.3); /* Bordó oscuro con opacidad */
+  z-index: -1;
+}
+
+/* Boton flotante Whastapp */
+.whatsapp-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #25D366;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  animation: breathe 2s ease-in-out infinite;
+}
+
+/*Estilos solo al icono whatsapp*/
+.whatsapp-btn i {
+  color: #fff;
+  font-size: 24px;
+  animation: beat 2s ease-in-out infinite;
+  text-decoration: none;
+}
+
+/*Estilos con animation contorno respirando*/
+@keyframes breathe {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  }
+}
+
+/*Estilos de animacion del icono latiendo*/
+@keyframes beat {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+  
+/* HEADER / NAVBAR */
+header {  
+  background: #400101;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-top: solid 3px #f2bb13;
+  border-bottom: solid 3px #f2bb13;
+}
+
+/* Contenedor del header */
+.headermenu {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1200px;
+  padding: 10px 20px;
 }
 
-/* IZQUIERDA */
-.left-section {
+/* Logo */
+.logoencontacto {
+  width: 65px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.logoencontacto:hover {
+  transform: scale(1.07);
+}
+
+/* Barra de navegación */
+.navlistmenu {
+  list-style: none;
   display: flex;
   align-items: center;
+  justify-content: space-evenly;
+  margin: 0 auto;
 }
 
-.logo-link {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  color: #f2bb13;
-  transition: all 0.5s ease;
-  margin-left: 350px;
+.navlistmenu li {
+  display: inline;
+  margin: 5px;
+  transition: 0.5s ease;
+  margin: 0 auto;
 }
 
-#imgLogo {
-  height: 80px;
-  width: 80px;
-}
-
-.logoArriba {
-  font-size: 50px;
-  font-weight: 700;
-  margin: 0;
-}
-
-/* DERECHA */
-.right-section {
-  display: flex;
-  align-items: center;
-  gap: 50px;
-  text-decoration: none;
-}
-
-.contacto {
-  text-decoration: none;
-  color: #f2bb13;
-  font-size: 50px;
-  font-weight: 700;
-  transition: all 0.5s ease;
-}
-
-.contacto:hover,
-.logo-link:hover,
-.carrito-icono:hover {
-  transform: scale(1.05);
-}
-
-.carrito-icono {
-  position: relative;
-  display: flex;
-  margin-right: 350px;
-  transition: all 0.5s ease;
-  width: 50px;
-  height: 50px;
-}
-
-#carrito-cantidad {
-  position: absolute;
-  top: -8px;
-  right: -8px;
+.navlistmenu li:hover {
+  color: black;
   background-color: #f2bb13;
-  color: white;
-  border-radius: 50%;
-  padding: 2px 6px;
-  font-size: 12px;
-  font-weight: bold;
+  border-radius: 30px;
+  border: 1px solid #f2bb13;
+  padding: 7px;
 }
 
+.navlistmenu a {
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 18px;
+  padding: 15px;
+  border-radius: 5px;
+}
 
-  
-  
-  nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-top: 1rem;
-  }
-  
-  nav a {
-    text-decoration: none;
-    color: white;
-    font-weight: 700;
-    padding: 0.5rem 1rem;
-    border-radius: 8px;
-    transition: background-color 0.3s;
-  }
-  
-  main {
-    flex: 1; /* Ocupa todo el espacio restante */
-    border-top: 2px solid #f29b30;
-  }
+.navlistmenu a:hover {
+  text-decoration: none;
+  color: black;
+}
 
-  /* Título principal */
-  main h2 {
+li a:hover svg .cart {
+  fill: black !important;
+}  
+
+
+main {
+  min-height: calc(100vh - 100px - 100px); /* Altura mínima para ocupar toda la página menos el header y footer */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly; /* Centrar contenido verticalmente si está vacío */
+  margin-bottom: 10px;
+  width: 90%; /* Aumentar el ancho del contenido dentro del main */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Título principal */
+main h2 {
     font-size: 40px;
-    margin-top: 15px;
     font-weight: 700;
     margin-bottom: 1.5rem;
     color: white;
     text-align: center;
-  }
+}
   
-  /* Contenedor del carrito */
-  #carrito-productos {
+
+/* Contenedor del carrito */
+#carrito-productos {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
@@ -163,17 +195,20 @@ header {
     justify-content: space-between;
     align-items: center;
     box-shadow: 0 4px 6px rgba(0,0,0,0.4);
+    border: 1px solid #f2bb13;
   }
   
   .info-producto h3 {
     color: #f2bb13;
     margin-bottom: 0.5rem;
-    font-size: 40px;
+    font-size: 30px;
     margin-top: -10px;
   }
   
   .info-producto p {
     margin-bottom: 0.2rem;
+    color: white;
+    font-weight: 700;
   }
   
   /* Botón eliminar */
@@ -204,61 +239,77 @@ header {
     color: white;
   }
   
+/* Botones de continuar compra y finalizar compra */  
+  .botones-continuar-finalizar {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
   .btn-finalizar {
     background-color: #400101;
     color: white;
     border: none;
-    padding: 0.8rem 1.5rem;
-    font-size: 1rem;
+    padding: 8px;
+    font-size: 20px;
     border-radius: 12px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    /*transition: background-color 0.3s;*/
   }
   
   .btn-finalizar:hover {
-    background-color: #bf0404;
+    color: black;
+    background-color: #f2bb13;
+    border: 1px solid #f2bb13;
+    padding: 9px;
+    font-size: 21px;
+    transition: 0.3s ease;
   }
 
   .btn-volver{
     background-color: #400101;
     color: white;
     border: none;
-    padding: 0.8rem 1.5rem;
-    font-size: 1rem;
+    padding: 8px;
+    font-size: 20px;
     border-radius: 12px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    /*transition: background-color 0.5s;*/
   }
-  .btn-volver:hover{
-    background-color: #bf0404;
-  }
+
   
-  #footer {
-    background-color: #730202;
+  .btn-volver:hover{
+    color: black;
+    background-color: #f2bb13;
+    border: 1px solid #f2bb13;
+    padding: 9px;
+    font-size: 21px;
+    transition: 0.3s ease;
+}
+    
+/* INICIO FOOTER */
+footer {
+    background: #400101;
+    border-top: solid 3px #f2bb13;
     color: white;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-top: 2px solid #f29b30;
-    gap: 10px;
-}
-
-#footerinfo {
-    display: flex;
-    align-items: center;
-    gap: 15px; /* Espacio entre la imagen y el texto */
+    padding: 10px;
     text-align: center;
-}
+    margin-top: auto; 
+  }
 
-#footerinfo img {
-    filter: drop-shadow(0 0 5px #f2bb13aa);
+/* Palabra JR en negrita */
+.texto_JR_Burguesia {
+  margin-right: 1px;
 }
 
 #derechos {
-    text-align: center;
-    color: gray;
+  text-align: center;
+  color: gray;
 }
+
+/* FIN FOOTER */
 
 .carrito-vacio {
   text-align: center;

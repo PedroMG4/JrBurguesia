@@ -157,24 +157,6 @@ body::before {
 }
 /* FIN SECCION PRODUCTOS */
 
-/* BOTONES *//*
-.boton {
-    background: #F1B24A;
-    scroll-behavior: smooth;
-    padding: 10px 20px;
-    border-radius: 8px;
-    color: #164A41;
-    font-weight: bold;
-    text-decoration: none;
-    transition: 0.5s ease;
-    font-size: 50px;
-}
-
-.boton:hover {
-    background: #4D774E;
-    color: white;
-}*/
-
 /* Boton flotante de Whastapp */
 .whatsapp-btn {
     position: fixed;
@@ -247,6 +229,8 @@ body::before {
     color: white;
     padding: 10px; 
     text-align: center;
+    bottom: 0;
+    width: 100%;
 }
 
 #derechos {
