@@ -189,21 +189,55 @@ li a:hover svg .cart {
     color: black;
 }
 
+#categoriaHamburguesas,
+#categoriaLomitos,
+#categoriaMilanesas,
+#categoriaPapas,
+#categoriaCombos,
+#categoriaBebidas {
+    text-align: center;
+    color: white;
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
 
-/* === CONTENEDORES DE CATEGORÍAS === */
+#nombreProducto{
+    color: #f2bb13;
+    font-size: 22px;
+    padding-top: 5px;
+    font-weight: 700;
+    font-style: italic;
+    width: 150px;
+    text-align: center;
+}
+
+/* === CONTENEDORES DE CATEGORÍAS === *//*
 .containerHamburguesas,
 .containerLomitos,
 .containerMilanesas,
 .containerPapas,
 .containerCombos {
     padding: 30px 20px;
+    text-align: center;
+
+}*/
+.imagenesHamburguesas ,
+.imagenesLomitos,
+.imagenesMilanesas,
+.imagenesPapas,
+.imagenesCombos, 
+.imagenesBebidas{
     display: flex;
-    flex-direction: column;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
     align-items: center;
+    margin-bottom: 20px;
 }
 
 
-/* === TÍTULOS DE SECCIONES === */
+/* === TÍTULOS DE SECCIONES === *//*
 #categoriaHamburguesas,
 #categoriaLomitos,
 #categoriaMilanesas,
@@ -217,7 +251,7 @@ li a:hover svg .cart {
     padding-left: 10px;
 }
 
-/* === GRID DE PRODUCTOS === */
+/* === GRID DE PRODUCTOS === *//*
 .imagenesHamburguesas,
 .imagenesLomitos,
 .imagenesMilanesas,
@@ -234,7 +268,7 @@ li a:hover svg .cart {
 /* === CADA PRODUCTO === */
 .hamburguesa-item {
     background-color: #730202;
-    padding: 15px;
+    padding: 5px;
     border-radius: 20px;
     transition: transform 0.2s;
     box-shadow: 0 0 10px #40010188;
@@ -242,21 +276,20 @@ li a:hover svg .cart {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center;
     min-height: 300px;
+    max-width: fit-content;
 }
-
 
 .hamburguesa-item:hover {
     transform: scale(1.03);
 }
 
 .image-preview {
-    width: 200px;
-    height: 200px;
+    width: 180px;
+    height: 150px;
     object-fit: cover;
     border-radius: 15px;
-    margin-bottom: 10px;
+    margin-bottom: 7px;
 }
 
 
@@ -264,19 +297,21 @@ li a:hover svg .cart {
 .hamburguesa-item button {
     background-color: #f2bb13;
     color: #400101;
-    padding: 10px 15px;
+    padding: 10px;
+    font-size: 13px;
     font-weight: bold;
     border: none;
     border-radius: 10px;
     cursor: pointer;
     transition: all 0.3s ease;
     margin-top: 10px;
+    margin-bottom: 5px;
     box-shadow: 0 0 10px #f2bb13aa;
 }
 
 .hamburguesa-item button:hover {
     background-color: #f29b30;
-    box-shadow: 0 0 15px #f2bb13;
+    box-shadow: 0 0 15px #f2bb13aa;
     transform: scale(1.05);
 }
 
@@ -352,14 +387,7 @@ footer {
 
 /* FIN FOOTER */
 
-#nombreProducto{
-    color: #f2bb13;
-    font-size: 25px;
-    padding: 10px;
-    padding-top: 5px;
-    font-weight: 700;
-    font-style: italic;
-}
+
 
 .agregar-carrito {
     display: flex;
@@ -373,8 +401,9 @@ footer {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    gap: 5px;
+    gap: 8px;
     color: #f2bb13;
+    font-size: 12px;
 }
 
 .cantidad-control {
@@ -408,31 +437,34 @@ footer {
   }
   
   /* Wrapper que le da el estilo al input */
-  .cantidad-wrapper {
+.cantidad-wrapper {
     width: 40px;
     height: 40px;
     border: 1px solid #f29b30;
     border-radius: 8px;
     background-color: #f2bb13;
-  }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
   
   /* Input centrado al 100% */
-  .cantidad-input {
+.cantidad-input {
     width: 100%;
     height: 100%;
     font-size: 20px;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
     border: none;
     background: transparent;
     outline: none;
     pointer-events: none;
-    padding-left: 18%;
     font-weight: 700;
+    text-align: center;
     display: flex;
-  }
+    justify-content: center;
+    align-items: center;
+}
 
+  /*
 @media (max-width: 768px) {
 
     #navlist {
@@ -467,7 +499,8 @@ footer {
         width: 40px;
         height: 40px;
     }
-    /* BARRA DE CATEGORÍAS */
+
+    /* BARRA DE CATEGORÍAS *//*
     #barraCategorias {
         flex-direction: column;
         gap: 8px;
@@ -480,7 +513,7 @@ footer {
         padding: 8px 16px;
     }
 
-    /* TÍTULOS DE SECCIONES */
+    /* TÍTULOS DE SECCIONES *//*
     #categoriaHamburguesas,
     #categoriaLomitos,
     #categoriaMilanesas,
@@ -492,7 +525,7 @@ footer {
         padding-left: 0;
     }
 
-    /* GRID DE PRODUCTOS */
+    /* GRID DE PRODUCTOS *//*
     .imagenesHamburguesas,
     .imagenesLomitos,
     .imagenesMilanesas,

@@ -74,32 +74,36 @@
            </div>
         </div>
     </nav>
+
+     
     <div class="containerHamburguesas">
         <div id="categoriaHamburguesas">Hamburguesas</div>
         <div class="imagenesHamburguesas">
             <div class="hamburguesa-item">
-                <div id="nombreProducto">Cheeseburger</div>
-                <img src="Assets/IMG_0229.jpeg" alt="Cheeseburger" height="200" width="200" class="image-preview" data-title="Cheeseburguer" data-description="Paty, Cheddar, Aderezo, Cebolla" onclick="openModal(this)">
-                <div class="agregar-carrito">
-                    <div class="cantidad-control">
-                        <button type="button" class="btn-restar">-</button>
-                        
-                        <div class="cantidad-wrapper">
-                            <input type="number" min="1" value="1" class="cantidad-input" readonly>
+                    <div id="nombreProducto">Cheeseburger</div>
+                    <img src="Assets/IMG_0229.jpeg" alt="Cheeseburger" class="image-preview" data-title="Cheeseburguer" data-description="Paty, Cheddar, Aderezo, Cebolla" onclick="openModal(this)">
+                    <div class="accordion-item"></div>   
+                    <div class="agregar-carrito">
+                        <div class="cantidad-control">
+                            <button type="button" class="btn-restar">-</button>
+                            
+                            <div class="cantidad-wrapper">
+                                <input type="number" min="1" value="1" class="cantidad-input" readonly>
+                            </div>
+                            
+                            <button type="button" class="btn-sumar">+</button>
                         </div>
                         
-                        <button type="button" class="btn-sumar">+</button>
+                        <div class="variantes">
+                            <label><input type="radio" name="opcion" value="1" required> SIMPLE</label>
+                            <label><input type="radio" name="opcion" value="2" required> DOBLE</label>
+                            <label><input type="radio" name="opcion" value="3" required> TRIPLE</label>
+                        </div>
+                
+                        <button onclick="addToCart(this)">AGREGAR AL CARRITO</button>
                     </div>
-                    
-                    <div class="variantes">
-                        <label><input type="radio" name="opcion" value="1" required> SIMPLE</label>
-                        <label><input type="radio" name="opcion" value="2" required> DOBLE</label>
-                        <label><input type="radio" name="opcion" value="3" required> TRIPLE</label>
-                    </div>
-            
-                    <button onclick="addToCart(this)">AGREGAR AL CARRITO</button>
-                </div>
             </div>
+             
             <div class="hamburguesa-item">
                 <div id="nombreProducto">Clásica</div>
                 <img src="Assets/IMG_0229.jpeg" alt="Clásica" height="200" width="200" class="image-preview" data-title="Clásica" data-description="Paty, Cheddar, Aderezo, Huevo, Lechuga, Tomate" onclick="openModal(this)">
@@ -194,7 +198,7 @@
             </div>
             
         </div>
-    </div>
+        </div>
     
     <div class="containerLomitos">
         <div id="categoriaLomitos">Lomitos</div>
@@ -217,11 +221,12 @@
             </div>
         </div>
     </div>
+
     <div class="containerMilanesas">
         <div id="categoriaMilanesas">Milanesas</div>    
         <div class="imagenesMilanesas">
             <div class="hamburguesa-item">
-                <div id="nombreProducto">Milanesa</div>
+                <div id="nombreProducto" style="margin-bottom: 32px;">Milanesa</div>
                 <img src="Assets/IMG_0229.jpeg" alt="Cheeseburger" height="200" width="200" class="image-preview" data-title="Milanesa" data-description="Paty, Cheddar, Aderezo, Cebolla" onclick="openModal(this)">
                 <div class="agregar-carrito">
                     <div class="cantidad-control">
@@ -270,11 +275,12 @@
             </div>
         </div>
     </div>
+
     <div class="containerPapas">
         <div id="categoriaPapas">Papas</div>
         <div class="imagenesPapas">
             <div class="hamburguesa-item">
-                <div id="nombreProducto">Papas simples</div>
+                <div id="nombreProducto" style="margin-bottom: 20px;">Papas simples</div>
                 <img src="Assets/IMG_0229.jpeg" alt="Cheeseburger" height="200" width="200" class="image-preview" data-title="Papas simples" data-description="Paty, Cheddar, Aderezo, Cebolla" onclick="openModal(this)">
                 <div class="agregar-carrito">
                     <div class="cantidad-control">
@@ -290,7 +296,7 @@
                 </div>
             </div>
             <div class="hamburguesa-item">
-                <div id="nombreProducto">Papas con Cheddar y Bacon</div>
+                <div id="nombreProducto" style="font-size: 18px;">Papas con Cheddar y Bacon</div>
                 <img src="Assets/IMG_0229.jpeg" alt="Mega" height="200" width="200" class="image-preview" data-title="Papas con cheddar y bacon" data-description="Paty, Cheddar, Aderezo, Cebolla caramelizada, Bacon" onclick="openModal(this)">
                 <div class="agregar-carrito">
                     <div class="cantidad-control">
@@ -307,9 +313,91 @@
             </div>
         </div>
     </div>
+
     <div class="containerCombos">
         <div id="categoriaCombos">Combos</div>
         <div class="imagenesCombos">
+            <div class="hamburguesa-item">
+                <img src="Assets/IMG_0229.jpeg" alt="Cheeseburger" height="200" width="200" class="image-preview" data-title="Cheeseburger" data-description="Paty, Cheddar, Aderezo, Cebolla" onclick="openModal(this)">
+                <div class="agregar-carrito">
+                    <div class="cantidad-control">
+                        <button type="button" class="btn-restar">-</button>
+                        
+                        <div class="cantidad-wrapper">
+                            <input type="number" min="1" value="1" class="cantidad-input" readonly>
+                        </div>
+                        
+                        <button type="button" class="btn-sumar">+</button>
+                    </div>
+                    <button onclick="addToCart(this)">AGREGAR AL CARRITO</button>
+                </div>
+            </div>
+            <div class="hamburguesa-item">
+                <img src="Assets/IMG_0229.jpeg" alt="Mega" height="200" width="200" class="image-preview" data-title="Mega" data-description="Paty, Cheddar, Aderezo, Cebolla caramelizada, Bacon" onclick="openModal(this)">
+                <div class="agregar-carrito">
+                    <div class="cantidad-control">
+                        <button type="button" class="btn-restar">-</button>
+                        
+                        <div class="cantidad-wrapper">
+                            <input type="number" min="1" value="1" class="cantidad-input" readonly>
+                        </div>
+                        
+                        <button type="button" class="btn-sumar">+</button>
+                    </div>
+                    <button onclick="addToCart(this)">AGREGAR AL CARRITO</button>
+                </div>
+            </div>
+            <div class="hamburguesa-item">
+                <img src="Assets/IMG_0229.jpeg" alt="Clásica" height="200" width="200" class="image-preview" data-title="Clásica" data-description="Paty, Cheddar, Aderezo, Huevo, Lechuga, Tomate" onclick="openModal(this)">
+                <div class="agregar-carrito">
+                    <div class="cantidad-control">
+                        <button type="button" class="btn-restar">-</button>
+                        
+                        <div class="cantidad-wrapper">
+                            <input type="number" min="1" value="1" class="cantidad-input" readonly>
+                        </div>
+                        
+                        <button type="button" class="btn-sumar">+</button>
+                    </div>
+                    <button onclick="addToCart(this)">AGREGAR AL CARRITO</button>
+                </div>
+            </div>
+            <div class="hamburguesa-item">
+                <img src="Assets/IMG_0229.jpeg" alt="Super" height="200" width="200" class="image-preview" data-title="Super" data-description="Paty, Cheddar, Aderezo, Cebolla, Huevo, Panceta" onclick="openModal(this)">
+                <div class="agregar-carrito">
+                    <div class="cantidad-control">
+                        <button type="button" class="btn-restar">-</button>
+                        
+                        <div class="cantidad-wrapper">
+                            <input type="number" min="1" value="1" class="cantidad-input" readonly>
+                        </div>
+                        
+                        <button type="button" class="btn-sumar">+</button>
+                    </div>
+                    <button onclick="addToCart(this)">AGREGAR AL CARRITO</button>
+                </div>
+            </div>
+            <div class="hamburguesa-item">
+                <img src="Assets/IMG_0229.jpeg" alt="BBQ" height="200" width="200" class="image-preview" data-title="BBQ" data-description="Paty, Cheddar, Aderezo, Panceta, Salsa Barbacoa" onclick="openModal(this)">
+                <div class="agregar-carrito">
+                    <div class="cantidad-control">
+                        <button type="button" class="btn-restar">-</button>
+                        
+                        <div class="cantidad-wrapper">
+                            <input type="number" min="1" value="1" class="cantidad-input" readonly>
+                        </div>
+                        
+                        <button type="button" class="btn-sumar">+</button>
+                    </div>
+                    <button onclick="addToCart(this)">AGREGAR AL CARRITO</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="containerBebdidas">
+        <div id="categoriaBebidas">Bebidas</div>
+        <div class="imagenesBebidas">
             <div class="hamburguesa-item">
                 <img src="Assets/IMG_0229.jpeg" alt="Cheeseburger" height="200" width="200" class="image-preview" data-title="Cheeseburger" data-description="Paty, Cheddar, Aderezo, Cebolla" onclick="openModal(this)">
                 <div class="agregar-carrito">
