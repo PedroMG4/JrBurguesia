@@ -483,6 +483,8 @@
             <p id="modalDescription"></p>
         </div>
     </div>
+      
+  
     
  <!-- FOOTER -->
     <footer id="footer">
@@ -497,5 +499,22 @@
     <script src="scriptMenu.js"></script>
     <!-- Boostrap CDN JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+      <!-- Modal de confirmación -->
+
+    <div id="modalConfirmacion" class="modal-confirmacion">
+        <div class="modal-content-confirmacion">
+        <span class="close-confirmacion" onclick="cerrarModalConfirmacion()">&times;</span>
+        <p id="mensajeConfirmacion"></p>
+        </div>
+    </div>
+  
+    <!-- Modal de advertencia -->
+    <div id="modalError" class="modal-error">
+      <div class="modal-content-error">
+       <span class="close-error" onclick="cerrarModalError()">&times;</span>
+       <p id="mensajeError"></p>
+      </div>
+    </div>
+  
 </body>
 </html>

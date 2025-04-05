@@ -37,9 +37,10 @@ function addToCart(buttonElement) {
     if (tieneVariantes) {
       const varianteSeleccionada = contenedor.querySelector('input[type="radio"]:checked');
       if (!varianteSeleccionada) {
-        alert("Por favor, seleccioná una variante: Simple, Doble o Triple.");
+        mostrarModalError("Por favor, seleccioná una variante: Simple, Doble o Triple.");
         return;
       }
+      
       variante = varianteSeleccionada.parentElement.textContent.trim();
     }
   
@@ -87,7 +88,8 @@ function addToCart(buttonElement) {
   
     actualizarCarritoCantidad();
   
-    alert(`Agregaste ${cantidad} "${producto} (${variante})" al carrito.`);
+    mostrarModalConfirmacion(`Agregaste ${cantidad} "${producto} (${variante})" al carrito.`);
+
   } 
   
 
@@ -114,6 +116,58 @@ function actualizarCarritoCantidad() {
         badge.style.display = totalCantidad > 0 ? 'inline-block' : 'none';
     }
 }
+// modal para la confirmacion de la seleccion de un producto
+function mostrarModalConfirmacion(mensaje) {
+  const modal = document.getElementById('modalConfirmacion');
+  const mensajeElem = document.getElementById('mensajeConfirmacion');
+
+  mensajeElem.textContent = mensaje;
+  modal.style.display = 'flex';
+  setTimeout(() => modal.classList.add('active'), 10); // delay para que se active la animación
+}
+
+function cerrarModalConfirmacion() {
+  const modal = document.getElementById('modalConfirmacion');
+  modal.classList.remove('active');
+  setTimeout(() => {
+    modal.style.display = 'none';
+  }, 300); // esperar a que termine la animación
+}
+
+// Cierre al hacer clic fuera del contenido
+window.addEventListener('click', function (event) {
+  const modal = document.getElementById('modalConfirmacion');
+  if (event.target === modal) {
+    cerrarModalConfirmacion();
+  }
+});
+
+
+// modal para avisar que no se selecciono variante (simple, doble o triple)
+function mostrarModalError(mensaje) {
+  const modal = document.getElementById('modalError');
+  const mensajeElem = document.getElementById('mensajeError');
+
+  mensajeElem.textContent = mensaje;
+  modal.style.display = 'flex';
+  setTimeout(() => modal.classList.add('active'), 10);
+}
+
+function cerrarModalError() {
+  const modal = document.getElementById('modalError');
+  modal.classList.remove('active');
+  setTimeout(() => {
+    modal.style.display = 'none';
+  }, 300);
+}
+
+// Cierre al hacer clic fuera del modal
+window.addEventListener('click', function (event) {
+  const modal = document.getElementById('modalError');
+  if (event.target === modal) {
+    cerrarModalError();
+  }
+});
 
 // Sumar/restar cantidad dinámicamente
 document.addEventListener('DOMContentLoaded', () => {
