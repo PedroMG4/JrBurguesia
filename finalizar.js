@@ -66,11 +66,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }).join('\n');
 
     try {
-      const res = await fetch('http://localhost:3000/enviar-pedido', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ nombre, direccion, telefono, correo, observaciones, pedido })
-      });
+    const res = await fetch('https://backendjrburguesia.onrender.com/enviar-pedido', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ nombre, direccion, telefono, correo, observaciones, pedido })
+    });
 
       if (res.ok) {
         const data = await res.json();
