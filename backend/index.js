@@ -1,18 +1,27 @@
-// index.js
-
 const express = require('express');
 const nodemailer = require('nodemailer');
-
-const app = express();
-const PORT =  process.env.PORT || 3000;
-
 const cors = require('cors');
 
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+// Configuración de CORS con soporte para preflight
 app.use(cors({
-  origin: 'https://jrburguesiafe.onrender.com'
+  origin: 'https://jrburguesiafe.onrender.com',
+  methods: ['GET', 'POST', 'OPTIONS'],
+  allowedHeaders: ['Content-Type']
 }));
+
+// Manejar preflight (solicitudes OPTIONS)
+app.options('*', cors());
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+// Ruta principal opcional (para evitar "Cannot GET /")
+app.get('/', (req, res) => {
+  res.send('Servidor JrBurguesía funcionando correctamente 🚀');
+});
 
 app.post('/enviar-pedido', (req, res) => {
   const { nombre, direccion, telefono, correo, observaciones, pedido } = req.body;
@@ -23,7 +32,7 @@ app.post('/enviar-pedido', (req, res) => {
     service: 'gmail',
     auth: {
       user: 'jrburguesia.ctes@gmail.com',
-      pass: process.env.GMAIL_APP_PASS // Reemplazar por contraseña de aplicación real
+      pass: process.env.GMAIL_APP_PASS // Usar variable de entorno segura
     }
   });
 
