@@ -5,7 +5,7 @@ const nodemailer = require('nodemailer');
 const cors = require('cors');
 
 const app = express();
-const PORT = 3000;
+const PORT =  process.env.PORT || 3000;
 
 app.use(cors());
 app.use(express.json());
@@ -20,7 +20,7 @@ app.post('/enviar-pedido', (req, res) => {
     service: 'gmail',
     auth: {
       user: 'jrburguesia.ctes@gmail.com',
-      pass: 'bgau zvte gzzd aywa' // Reemplazar por contraseña de aplicación real
+      pass: '-' // Reemplazar por contraseña de aplicación real
     }
   });
 
