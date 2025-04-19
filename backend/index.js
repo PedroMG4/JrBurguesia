@@ -4,13 +4,13 @@ const nodemailer = require('nodemailer');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Middleware manual de CORS (funciona seguro en Render)
+// Middleware CORS headers manual
 app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', 'https://jrburguesiafe.onrender.com');
-  res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
-  res.header('Access-Control-Allow-Headers', 'Content-Type');
+  res.setHeader('Access-Control-Allow-Origin', 'https://jrburguesiafe.onrender.com');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
   if (req.method === 'OPTIONS') {
-    return res.sendStatus(200); // Responde preflight
+    return res.sendStatus(204); // No Content para preflight
   }
   next();
 });
@@ -18,9 +18,8 @@ app.use((req, res, next) => {
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Ruta opcional para test
 app.get('/', (req, res) => {
-  res.send('Servidor JrBurguesía funcionando 🚀');
+  res.send('Servidor JrBurguesía funcionando correctamente');
 });
 
 app.post('/enviar-pedido', (req, res) => {
@@ -76,4 +75,3 @@ JrBurguesía
 app.listen(PORT, () => {
   console.log(`Servidor escuchando en puerto ${PORT}`);
 });
-
