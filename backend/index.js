@@ -2,13 +2,14 @@
 
 const express = require('express');
 const nodemailer = require('nodemailer');
-const cors = require('cors');
 
 const app = express();
 const PORT =  process.env.PORT || 3000;
 
+const cors = require('cors');
+
 app.use(cors({
-  origin: 'https://frontendjrburguesia.onrender.com'
+  origin: 'https://jrburguesiafe.onrender.com'
 }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
