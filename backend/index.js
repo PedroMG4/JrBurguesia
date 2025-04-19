@@ -1,28 +1,26 @@
 const express = require('express');
 const nodemailer = require('nodemailer');
-const cors = require('cors');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Middleware CORS: debe ir antes de cualquier ruta
-const corsOptions = {
-  origin: 'https://jrburguesiafe.onrender.com',
-  methods: ['GET', 'POST', 'OPTIONS'],
-  allowedHeaders: ['Content-Type']
-};
-
-app.use(cors(corsOptions));
-
-// Middleware para OPTIONS preflight request
-app.options('*', cors(corsOptions));
+// Middleware manual de CORS (funciona seguro en Render)
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', 'https://jrburguesiafe.onrender.com');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+  res.header('Access-Control-Allow-Headers', 'Content-Type');
+  if (req.method === 'OPTIONS') {
+    return res.sendStatus(200); // Responde preflight
+  }
+  next();
+});
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Ruta raíz opcional
+// Ruta opcional para test
 app.get('/', (req, res) => {
-  res.send('Servidor JrBurguesía online 🚀');
+  res.send('Servidor JrBurguesía funcionando 🚀');
 });
 
 app.post('/enviar-pedido', (req, res) => {
@@ -78,3 +76,4 @@ JrBurguesía
 app.listen(PORT, () => {
   console.log(`Servidor escuchando en puerto ${PORT}`);
 });
+
