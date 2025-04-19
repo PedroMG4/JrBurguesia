@@ -20,7 +20,7 @@ app.post('/enviar-pedido', (req, res) => {
     service: 'gmail',
     auth: {
       user: 'jrburguesia.ctes@gmail.com',
-      pass: '-' // Reemplazar por contraseña de aplicación real
+      pass: process.env.GMAIL_APP_PASS // Reemplazar por contraseña de aplicación real
     }
   });
 
