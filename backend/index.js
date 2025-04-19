@@ -7,7 +7,9 @@ const cors = require('cors');
 const app = express();
 const PORT =  process.env.PORT || 3000;
 
-app.use(cors());
+app.use(cors({
+  origin: 'https://frontendjrburguesia.onrender.com'
+}));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
