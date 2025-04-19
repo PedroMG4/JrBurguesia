@@ -4,7 +4,7 @@ const nodemailer = require('nodemailer');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Middleware CORS headers manual
+// Middleware CORS headers forzado manual
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', 'https://jrburguesiafe.onrender.com');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
@@ -18,10 +18,12 @@ app.use((req, res, next) => {
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// Ruta raíz para verificar que el backend responde
 app.get('/', (req, res) => {
-  res.send('Servidor JrBurguesía funcionando correctamente');
+  res.send('Servidor JrBurguesía funcionando correctamente 🚀');
 });
 
+// Ruta principal para enviar pedidos
 app.post('/enviar-pedido', (req, res) => {
   const { nombre, direccion, telefono, correo, observaciones, pedido } = req.body;
   const pedidoId = 'PED-' + Date.now();
